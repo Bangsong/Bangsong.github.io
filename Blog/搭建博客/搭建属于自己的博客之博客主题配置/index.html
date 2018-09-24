@@ -89,14 +89,14 @@
 <meta name="description" content="本章基础是已经通过hexo在本地初始化好了一个blog，若还未搭建，可以参考我之前的文章：搭建属于自己的博客之环境变量。 本章介绍的主题是Next，更多主题可查看hexo主题，Next官网还在建设中，所以暂时没有什么可以了解的，个人感觉这个主题还不错。 Next主题安装打开cmd，移动到之前创建的博客文件夹hexo\blog下，然后执行命令： 1git clone https://github.c">
 <meta name="keywords" content="搭建博客">
 <meta property="og:type" content="article">
-<meta property="og:title" content="搭建属于自己的博客之博客主题配置">
+<meta property="og:title" content="搭建属于自己的博客之博客主题配置一">
 <meta property="og:url" content="https://bangsong.github.io/Blog/搭建博客/搭建属于自己的博客之博客主题配置/index.html">
 <meta property="og:site_name" content="XGamer">
 <meta property="og:description" content="本章基础是已经通过hexo在本地初始化好了一个blog，若还未搭建，可以参考我之前的文章：搭建属于自己的博客之环境变量。 本章介绍的主题是Next，更多主题可查看hexo主题，Next官网还在建设中，所以暂时没有什么可以了解的，个人感觉这个主题还不错。 Next主题安装打开cmd，移动到之前创建的博客文件夹hexo\blog下，然后执行命令： 1git clone https://github.c">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-23T15:27:27.642Z">
+<meta property="og:updated_time" content="2018-09-24T14:30:46.515Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="搭建属于自己的博客之博客主题配置">
+<meta name="twitter:title" content="搭建属于自己的博客之博客主题配置一">
 <meta name="twitter:description" content="本章基础是已经通过hexo在本地初始化好了一个blog，若还未搭建，可以参考我之前的文章：搭建属于自己的博客之环境变量。 本章介绍的主题是Next，更多主题可查看hexo主题，Next官网还在建设中，所以暂时没有什么可以了解的，个人感觉这个主题还不错。 Next主题安装打开cmd，移动到之前创建的博客文件夹hexo\blog下，然后执行命令： 1git clone https://github.c">
 
 
@@ -133,7 +133,7 @@
 
 
 
-  <title>搭建属于自己的博客之博客主题配置 | XGamer</title>
+  <title>搭建属于自己的博客之博客主题配置一 | XGamer</title>
   
 
 
@@ -321,7 +321,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">搭建属于自己的博客之博客主题配置</h1>
+          <h1 class="post-title" itemprop="name headline">搭建属于自己的博客之博客主题配置一</h1>
         
 
         <div class="post-meta">
@@ -349,8 +349,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-09-23T23:27:27+08:00">
-                2018-09-23
+              <time title="更新于" itemprop="dateModified" datetime="2018-09-24T22:30:46+08:00">
+                2018-09-24
               </time>
             
           </span>
@@ -404,7 +404,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2k
+                  2.9k
                 </span>
               
 
@@ -420,7 +420,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  8
+                  12
                 </span>
               
             </div>
@@ -547,6 +547,8 @@
 <h1 id="Next主题设置"><a href="#Next主题设置" class="headerlink" title="Next主题设置"></a>Next主题设置</h1><p>​    接下来修改，默认都是next主题的配置文件(<code>hexo\blog\themes\next\_config.yml</code>)，特殊情况会特别提醒。</p>
 <h3 id="主题风格设置"><a href="#主题风格设置" class="headerlink" title="主题风格设置"></a>主题风格设置</h3><p>​    在<code>_config</code>中搜索<strong>Schemes</strong>，然后将你想使用的风格签名的#去掉即可，我使用的是<strong>Gemini</strong>。</p>
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># ---------------------------------------------------------------</span></span><br><span class="line"><span class="comment"># Scheme Settings</span></span><br><span class="line"><span class="comment"># ---------------------------------------------------------------</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Schemes</span></span><br><span class="line"><span class="comment">#scheme: Muse</span></span><br><span class="line"><span class="comment">#scheme: Mist</span></span><br><span class="line"><span class="comment">#scheme: Pisces</span></span><br><span class="line"><span class="attr">scheme:</span> <span class="string">Gemini</span></span><br></pre></td></tr></table></figure>
+<h3 id="修改博文访问路径"><a href="#修改博文访问路径" class="headerlink" title="修改博文访问路径"></a>修改博文访问路径</h3><p>​    打开<code>hexo\blog\_config.yml</code>搜<code>permalink索</code>，修改如下(若是直接复制我上文的配置文件，则这个设置过了)</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">permalink: :<span class="title">category</span>/:<span class="title">title</span>/</span></span><br></pre></td></tr></table></figure>
 <h3 id="菜单配置"><a href="#菜单配置" class="headerlink" title="菜单配置"></a>菜单配置</h3><p>​    在<code>_config</code>中搜索<strong>menu</strong>，然后设置其下的属性值。其中<strong>||</strong>前面配置的是菜单项对应的目录，<strong>||</strong>后面配置的是菜单的图标。</p>
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line"><span class="attr">  home:</span> <span class="string">/</span> <span class="string">||</span> <span class="string">home</span> <span class="comment">#首页</span></span><br><span class="line"><span class="attr">  tags:</span> <span class="string">/tags/</span> <span class="string">||</span> <span class="string">tags</span> <span class="comment">#标签</span></span><br><span class="line"><span class="attr">  categories:</span> <span class="string">/categories/</span> <span class="string">||</span> <span class="string">th</span> <span class="comment">#分类</span></span><br><span class="line"><span class="attr">  archives:</span> <span class="string">/archives/</span> <span class="string">||</span> <span class="string">archive</span> <span class="comment">#归档</span></span><br><span class="line">  <span class="comment">#schedule: /schedule/ || calendar #日程表</span></span><br><span class="line">  <span class="comment">#sitemap: /sitemap.xml || sitemap	#站点地图</span></span><br><span class="line">  <span class="comment">#commonweal: /404.html || heartbeat #公益404</span></span><br><span class="line"><span class="attr">  about:</span> <span class="string">/about/</span> <span class="string">||</span> <span class="string">user</span> <span class="comment">#关于</span></span><br></pre></td></tr></table></figure>
 <h3 id="菜单图标"><a href="#菜单图标" class="headerlink" title="菜单图标"></a>菜单图标</h3><p>​    next使用的是 <a href="http://www.fontawesome.com.cn/faicons/" target="_blank" rel="noopener">Font Awesome</a> 提供的图标，如需替换自行查看。在<code>_config</code>中搜索<strong>menu_icos</strong>，将其设置为true可在其下设置对应的菜单图标或新增菜单图标。在上面配置的图标就是引用这个地方(若没有配置，则默认)的配置。</p>
@@ -610,6 +612,36 @@
 <p><code>blogUpdate.bat</code></p>
 <figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> blog &amp;&amp; hexo clean &amp;&amp; hexo g &amp;&amp; <span class="built_in">xcopy</span> public E:\GitCode\Bangsong.github.io\Blog /y /e &amp;&amp; <span class="built_in">cd</span> E:\GitCode\Bangsong.github.io\Blog &amp;&amp; git add . &amp;&amp; git commit -m "update" &amp;&amp; git push origin master</span><br></pre></td></tr></table></figure>
 <p>其中，xcopy那一步是将生产的静态文件复制到git的本地仓库目录中，然后添加本地仓库、提交、提交到远程仓库。</p>
+<p>经过上述配置之后，你可能想开始写文章了。下面就简单介绍一下文章创建等一些操作。</p>
+<p>如果你是按照我上面来配置的话，应该没改动默认的文件夹结构，若改动了之后，那应该你就知道每个文件夹所对应的关系，我就不在这陈述了。</p>
+<h1 id="通过Hexo创建博文"><a href="#通过Hexo创建博文" class="headerlink" title="通过Hexo创建博文"></a>通过Hexo创建博文</h1><h3 id="创建文章"><a href="#创建文章" class="headerlink" title="创建文章"></a>创建文章</h3><p>​    打开cmd，移动到<code>hexo\blog</code>下，执行文章创建命令：</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new post 文章名</span><br></pre></td></tr></table></figure>
+<p>​    <strong>注意</strong>：第三个参数是用来指定文章放置的位置，post是指_post(hexo默认创建的)。若你想新建一个文件夹，则：</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new 目录名 文章名</span><br></pre></td></tr></table></figure>
+<p>​    上述配置过标签和分类，那么我就以这两个例子来说一下。</p>
+<h4 id="创建标签目录"><a href="#创建标签目录" class="headerlink" title="创建标签目录"></a>创建标签目录</h4><p>​    执行命令：</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new tags</span><br></pre></td></tr></table></figure>
+<p>​    <strong>注意</strong>：若不指定文章名则默认会在目录下生成一个index.md文件。tags是上述配置标签的目录。无需写东西，使用默认创建的index.md就行，系统会默认将你的所有的文章按照你文章所标的标签来分类整理。</p>
+<p>​    若需要将某篇博文放置到某个标签下，则只需在文章的头部信息添加<code>tags</code>信息就行，需要注意的是<strong>每个属性和属性值直接都是有一个空格的</strong>，如：</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">title: <span class="title">hello</span> <span class="title">world</span></span></span><br><span class="line"><span class="function"><span class="title">date</span>: 2018-9-24 21:41:13</span></span><br><span class="line"><span class="function"><span class="title">tags</span>: '欢迎界面'</span></span><br></pre></td></tr></table></figure>
+<p>然后你再次生成运行，点击菜单中的标签就会发现<code>hello world</code>自动归类到了<code>欢迎界面</code>。</p>
+<p>​    <code>分类菜单</code>也是如此，只需要创建通过命令创建一个目录就行，hexo会自动创建一个index.md，此文件不用修改，要想将某篇博文归为某一类文章则，只需在其头部信息添加<code>categories</code>就行。</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">title: <span class="title">hello</span> <span class="title">world</span></span></span><br><span class="line"><span class="function"><span class="title">date</span>: 2018-9-24 21:41:13</span></span><br><span class="line"><span class="function"><span class="title">tags</span>: '欢迎界面'</span></span><br><span class="line"><span class="function"><span class="title">categories</span>: '欢迎界面'</span></span><br></pre></td></tr></table></figure>
+<p>再次生成运行，点击菜单中的分类就会发现<code>hello world</code>自动归类到了<code>欢迎界面</code>。</p>
+<h4 id="创建关于"><a href="#创建关于" class="headerlink" title="创建关于"></a>创建<code>关于</code></h4><p>​    <code>关于</code>界面我配置的是放在about目录下，同样需要创建一个about。</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new about</span><br></pre></td></tr></table></figure>
+<p>​    创建完成之后在index.md中添加相应的信息就行了。</p>
+<h4 id="404"><a href="#404" class="headerlink" title="404"></a>404</h4><p>​    执行命令</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new <span class="number">404</span></span><br></pre></td></tr></table></figure>
+<p>​    在404\index.md文件中，将头部信息修改一些，将内容修改为相应的404界面，我使用的是腾讯公益，你可以直接复制过去。</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line"><span class="function">title: 404</span></span><br><span class="line"><span class="function"><span class="title">date</span>: 2018-09-21 10:22:13</span></span><br><span class="line"><span class="function"><span class="title">comments</span>: <span class="title">false</span></span></span><br><span class="line"><span class="function"><span class="title">permalink</span>: /404</span></span><br><span class="line"><span class="function">---</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">&lt;!<span class="title">DOCTYPE</span> <span class="title">HTML</span>&gt;</span></span><br><span class="line"><span class="function">&lt;<span class="title">html</span>&gt;</span></span><br><span class="line"><span class="function">&lt;<span class="title">head</span>&gt;</span></span><br><span class="line"><span class="function">  &lt;<span class="title">meta</span> <span class="title">http</span>-<span class="title">equiv</span>="<span class="title">content</span>-<span class="title">type</span>" <span class="title">content</span>="<span class="title">text</span>/<span class="title">html</span>;<span class="title">charset</span>=<span class="title">utf</span>-8;"/&gt;</span></span><br><span class="line"><span class="function">  &lt;<span class="title">meta</span> <span class="title">http</span>-<span class="title">equiv</span>="<span class="title">X</span>-<span class="title">UA</span>-<span class="title">Compatible</span>" <span class="title">content</span>="<span class="title">IE</span>=<span class="title">edge</span>,<span class="title">chrome</span>=1" /&gt;</span></span><br><span class="line"><span class="function">  &lt;<span class="title">meta</span> <span class="title">name</span>="<span class="title">robots</span>" <span class="title">content</span>="<span class="title">all</span>" /&gt;</span></span><br><span class="line"><span class="function">  &lt;<span class="title">meta</span> <span class="title">name</span>="<span class="title">robots</span>" <span class="title">content</span>="<span class="title">index</span>,<span class="title">follow</span>"/&gt;</span></span><br><span class="line"><span class="function">  &lt;<span class="title">link</span> <span class="title">rel</span>="<span class="title">stylesheet</span>" <span class="title">type</span>="<span class="title">text</span>/<span class="title">css</span>" <span class="title">href</span>="<span class="title">https</span>://<span class="title">qzone.qq.com</span>/<span class="title">gy</span>/404/<span class="title">style</span>/404<span class="title">style.css</span>"&gt;</span></span><br><span class="line"><span class="function">&lt;/<span class="title">head</span>&gt;</span></span><br><span class="line"><span class="function">&lt;<span class="title">body</span>&gt;</span></span><br><span class="line"><span class="function">  &lt;<span class="title">script</span> <span class="title">type</span>="<span class="title">text</span>/<span class="title">plain</span>" <span class="title">src</span>="<span class="title">http</span>://<span class="title">www.qq.com</span>/404/<span class="title">search_children.js</span>"</span></span><br><span class="line"><span class="function">          <span class="title">charset</span>="<span class="title">utf</span>-8" <span class="title">homePageUrl</span>="/"</span></span><br><span class="line"><span class="function">          <span class="title">homePageName</span>="回到我的主页"&gt;</span></span><br><span class="line"><span class="function">  &lt;/<span class="title">script</span>&gt;</span></span><br><span class="line"><span class="function">  &lt;<span class="title">script</span> <span class="title">src</span>="<span class="title">https</span>://<span class="title">qzone.qq.com</span>/<span class="title">gy</span>/404/<span class="title">data.js</span>" <span class="title">charset</span>="<span class="title">utf</span>-8"&gt;&lt;/<span class="title">script</span>&gt;</span></span><br><span class="line"><span class="function">  &lt;<span class="title">script</span> <span class="title">src</span>="<span class="title">https</span>://<span class="title">qzone.qq.com</span>/<span class="title">gy</span>/404/<span class="title">page.js</span>" <span class="title">charset</span>="<span class="title">utf</span>-8"&gt;&lt;/<span class="title">script</span>&gt;</span></span><br><span class="line"><span class="function">&lt;/<span class="title">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="配置网站查询"><a href="#配置网站查询" class="headerlink" title="配置网站查询"></a>配置网站查询</h4><p>​    在<code>hexo\blog</code>目录下执行命令</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-searchdb --save</span><br></pre></td></tr></table></figure>
+<p>​    打开该目录下的<code>_config.yml</code>添加代码：</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">search:</span></span><br><span class="line"><span class="function">  <span class="title">path</span>: <span class="title">search.xml</span></span></span><br><span class="line"><span class="function">  <span class="title">field</span>: <span class="title">post</span></span></span><br><span class="line"><span class="function">  <span class="title">format</span>: <span class="title">html</span></span></span><br><span class="line"><span class="function">  <span class="title">limit</span>: 10000</span></span><br></pre></td></tr></table></figure>
+<p>​    打开<code>hexo\blog\themes\next</code>目录下的<code>_config.yml</code>搜索local_search，将其设置为true。</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># Local search</span><br><span class="line"># Dependencies: https://github.com/flashlab/hexo-generator-search</span><br><span class="line"><span class="function">local_search:</span></span><br><span class="line"><span class="function">  <span class="title">enable</span>: <span class="title">true</span></span></span><br><span class="line"><span class="function">  # <span class="title">if</span> <span class="title">auto</span>, <span class="title">trigger</span> <span class="title">search</span> <span class="title">by</span> <span class="title">changing</span> <span class="title">input</span></span></span><br><span class="line"><span class="function">  # <span class="title">if</span> <span class="title">manual</span>, <span class="title">trigger</span> <span class="title">search</span> <span class="title">by</span> <span class="title">pressing</span> <span class="title">enter</span> <span class="title">key</span> <span class="title">or</span> <span class="title">search</span> <span class="title">button</span></span></span><br><span class="line"><span class="function">  <span class="title">trigger</span>: <span class="title">auto</span></span></span><br><span class="line"><span class="function">  # <span class="title">show</span> <span class="title">top</span> <span class="title">n</span> <span class="title">results</span> <span class="title">per</span> <span class="title">article</span>, <span class="title">show</span> <span class="title">all</span> <span class="title">results</span> <span class="title">by</span> <span class="title">setting</span> <span class="title">to</span> -1</span></span><br><span class="line"><span class="function">  <span class="title">top_n_per_article</span>: 1</span></span><br></pre></td></tr></table></figure>
+<p>​    重新生成运行，点击查询即可全局搜索文章了。</p>
 <h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>​    以上只是配置网站及网站左侧的一些信息。更多配置请关注以后的章节。</p>
 
       
@@ -669,7 +701,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://bangsong.github.io/Blog/搭建博客/搭建属于自己的博客之博客主题配置/" title="搭建属于自己的博客之博客主题配置">https://bangsong.github.io/Blog/搭建博客/搭建属于自己的博客之博客主题配置/</a>
+    <a href="https://bangsong.github.io/Blog/搭建博客/搭建属于自己的博客之博客主题配置/" title="搭建属于自己的博客之博客主题配置一">https://bangsong.github.io/Blog/搭建博客/搭建属于自己的博客之博客主题配置/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -706,6 +738,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/Blog/搭建博客/搭建属于自己的博客之博客主题配置二/" rel="prev" title="搭建属于自己的博客之博客主题配置二">
+                搭建属于自己的博客之博客主题配置二 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -789,7 +825,7 @@
               
                 <a href="/Blog/archives/">
               
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -874,7 +910,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Next主题安装"><span class="nav-number">1.</span> <span class="nav-text">Next主题安装</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Next主题设置"><span class="nav-number">2.</span> <span class="nav-text">Next主题设置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#主题风格设置"><span class="nav-number">2.0.1.</span> <span class="nav-text">主题风格设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#菜单配置"><span class="nav-number">2.0.2.</span> <span class="nav-text">菜单配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#菜单图标"><span class="nav-number">2.0.3.</span> <span class="nav-text">菜单图标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#头像设置"><span class="nav-number">2.0.4.</span> <span class="nav-text">头像设置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#头像样式修改-可选"><span class="nav-number">2.0.4.1.</span> <span class="nav-text">头像样式修改(可选)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置社交链接"><span class="nav-number">2.0.5.</span> <span class="nav-text">设置社交链接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置友情链接"><span class="nav-number">2.0.6.</span> <span class="nav-text">设置友情链接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置页面浏览进度"><span class="nav-number">2.0.7.</span> <span class="nav-text">设置页面浏览进度</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#hexo操作"><span class="nav-number">3.</span> <span class="nav-text">hexo操作</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#结语"><span class="nav-number">4.</span> <span class="nav-text">结语</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Next主题安装"><span class="nav-number">1.</span> <span class="nav-text">Next主题安装</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Next主题设置"><span class="nav-number">2.</span> <span class="nav-text">Next主题设置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#主题风格设置"><span class="nav-number">2.0.1.</span> <span class="nav-text">主题风格设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改博文访问路径"><span class="nav-number">2.0.2.</span> <span class="nav-text">修改博文访问路径</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#菜单配置"><span class="nav-number">2.0.3.</span> <span class="nav-text">菜单配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#菜单图标"><span class="nav-number">2.0.4.</span> <span class="nav-text">菜单图标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#头像设置"><span class="nav-number">2.0.5.</span> <span class="nav-text">头像设置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#头像样式修改-可选"><span class="nav-number">2.0.5.1.</span> <span class="nav-text">头像样式修改(可选)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置社交链接"><span class="nav-number">2.0.6.</span> <span class="nav-text">设置社交链接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置友情链接"><span class="nav-number">2.0.7.</span> <span class="nav-text">设置友情链接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置页面浏览进度"><span class="nav-number">2.0.8.</span> <span class="nav-text">设置页面浏览进度</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#hexo操作"><span class="nav-number">3.</span> <span class="nav-text">hexo操作</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#通过Hexo创建博文"><span class="nav-number">4.</span> <span class="nav-text">通过Hexo创建博文</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建文章"><span class="nav-number">4.0.1.</span> <span class="nav-text">创建文章</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#创建标签目录"><span class="nav-number">4.0.1.1.</span> <span class="nav-text">创建标签目录</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建关于"><span class="nav-number">4.0.1.2.</span> <span class="nav-text">创建关于</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#404"><span class="nav-number">4.0.1.3.</span> <span class="nav-text">404</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置网站查询"><span class="nav-number">4.0.1.4.</span> <span class="nav-text">配置网站查询</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#结语"><span class="nav-number">5.</span> <span class="nav-text">结语</span></a></li></ol></div>
             
 
           </div>
@@ -915,7 +951,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">17.6k</span>
+    <span title="Site words total count">19.8k</span>
   
 </div>
 
