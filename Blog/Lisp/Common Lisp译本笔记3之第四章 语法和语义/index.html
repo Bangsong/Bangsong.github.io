@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="XGamer, Bangsong" />
+  <meta name="keywords" content="Lisp," />
 
 
 
@@ -86,16 +86,18 @@
 
 
 
-<meta name="description" content="个人博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="XGamer">
-<meta property="og:url" content="https://bangsong.github.io/Blog/tags/spring/index.html">
+<meta name="description" content="大多数编程语言，语言的处理器(无论是解释器或编译器)的操作方式都类似黑箱操作。在黑箱内部，语言的处理器通常分成子系统。一个典型的任务划分思路：将处理器分为三个阶段，每个阶段为下一个阶段提供内容。  一个词法分析器将字符流分拆成语元并将其送进一个解析器 解析器再根据该语言的语法在程序中构建一个表达式的树形表示。这棵树被称为抽象语法树。 随即被送进一个求值器，求值器要么直接解释它，要么将其编译成魔种其">
+<meta name="keywords" content="Lisp">
+<meta property="og:type" content="article">
+<meta property="og:title" content="第四章：语法和语义">
+<meta property="og:url" content="https://bangsong.github.io/Blog/Lisp/Common Lisp译本笔记3之第四章 语法和语义/index.html">
 <meta property="og:site_name" content="XGamer">
-<meta property="og:description" content="个人博客">
+<meta property="og:description" content="大多数编程语言，语言的处理器(无论是解释器或编译器)的操作方式都类似黑箱操作。在黑箱内部，语言的处理器通常分成子系统。一个典型的任务划分思路：将处理器分为三个阶段，每个阶段为下一个阶段提供内容。  一个词法分析器将字符流分拆成语元并将其送进一个解析器 解析器再根据该语言的语法在程序中构建一个表达式的树形表示。这棵树被称为抽象语法树。 随即被送进一个求值器，求值器要么直接解释它，要么将其编译成魔种其">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-09-25T01:58:15.648Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="XGamer">
-<meta name="twitter:description" content="个人博客">
+<meta name="twitter:title" content="第四章：语法和语义">
+<meta name="twitter:description" content="大多数编程语言，语言的处理器(无论是解释器或编译器)的操作方式都类似黑箱操作。在黑箱内部，语言的处理器通常分成子系统。一个典型的任务划分思路：将处理器分为三个阶段，每个阶段为下一个阶段提供内容。  一个词法分析器将字符流分拆成语元并将其送进一个解析器 解析器再根据该语言的语法在程序中构建一个表达式的树形表示。这棵树被称为抽象语法树。 随即被送进一个求值器，求值器要么直接解释它，要么将其编译成魔种其">
 
 
 
@@ -125,13 +127,13 @@
 
 
 
-  <link rel="canonical" href="https://bangsong.github.io/Blog/tags/spring/"/>
+  <link rel="canonical" href="https://bangsong.github.io/Blog/Lisp/Common Lisp译本笔记3之第四章 语法和语义/"/>
 
 
 
 
 
-  <title>标签: spring | XGamer</title>
+  <title>第四章：语法和语义 | XGamer</title>
   
 
 
@@ -150,7 +152,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -288,110 +290,341 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block tag">
-
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>spring<small>标签</small>
-        </h1>
-      </div>
-
-      
-        
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://bangsong.github.io/Blog/Blog/Lisp/Common Lisp译本笔记3之第四章 语法和语义/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="万能的小明">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/Blog/images/user.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XGamer">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/Blog/spring/SSM多数据源注解动态切换/" itemprop="url">
-              
-                <span itemprop="name">SSM多数据源注解动态切换</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">第四章：语法和语义</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-21T20:20:30+08:00"
-              content="2018-09-21" >
-          09-21
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-25T09:49:03+08:00">
+                2018-09-25
+              </time>
+            
 
-    </header>
-  </article>
+            
+              <span class="post-meta-divider">|</span>
+            
 
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2018-09-25T09:58:15+08:00">
+                2018-09-25
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Blog/categories/Lisp/" itemprop="url" rel="index">
+                    <span itemprop="name">Lisp</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i> 阅读次数
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1.4k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  4
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/Blog/spring/SSM框架搭建/" itemprop="url">
-              
-                <span itemprop="name">SSM框架搭建</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-21T20:20:30+08:00"
-              content="2018-09-21" >
-          09-21
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+      
 
       
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/Blog/spring/springmvc初识/" itemprop="url">
-              
-                <span itemprop="name">springmvc初识</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-21T20:00:26+08:00"
-              content="2018-09-21" >
-          09-21
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+        <p>大多数编程语言，语言的处理器(无论是解释器或编译器)的操作方式都类似黑箱操作。<br>在黑箱内部，语言的处理器通常分成子系统。<br>一个典型的任务划分思路：将处理器分为三个阶段，每个阶段为下一个阶段提供内容。</p>
+<ul>
+<li>一个词法分析器将字符流分拆成语元并将其送进一个解析器</li>
+<li>解析器再根据该语言的语法在程序中构建一个表达式的树形表示。这棵树被称为抽象语法树。</li>
+<li>随即被送进一个求值器，求值器要么直接解释它，要么将其编译成魔种其他语言(如：机器码)。</li>
+</ul>
+<p>Common lisp定义了两个黑箱：读取器、求值器</p>
+<ul>
+<li>读取器：将文本转为lisp对象。</li>
+<li>求值器：用这些对象实现语言的语义。</li>
+</ul>
+<p>每个黑箱都定义了一个语法层面。读取器定义了字符串如何被转换为S-表达式的lisp对象。<br>S-表达式适用于由任意对象及其他列表所组成的列表，因此S-表达式可用来表达任意树形表达式。<br>求值器随后定义了一种构建在S-表达式之上的lisp形式的语法。</p>
+<p>此种黑箱划分带来的后果：</p>
+<ul>
+<li>可将S-表达式用作一种可暴露的数据格式来表达源代码之外的数据。</li>
+<li>由于语言的语义是用对象树而非字符串定义而成的，则可通过语言本身来生成代码，则可通过处理现有的数据生成代码，从而达到“可编程的编程语言”的效果，即lisp宏的本意。</li>
+</ul>
+<h1 id="S-表达式"><a href="#S-表达式" class="headerlink" title="S-表达式"></a>S-表达式</h1><p>S-表达式的基本元素是列表、原子。<br>列表由括号所包围，并可包含任何数量的由空格所分隔的元素。<br>原子是所有其他内容。</p>
+<ul>
+<li><p>原子：数字、字符串、名字。</p>
+</li>
+<li><p>数字：任何数位的序列都会被读取为一个数字。可为整数、比值、小数、科学计数法</p>
+</li>
+<li><p>字符串：用双引号包含的都是字符串。用反斜杠进行转义。</p>
+</li>
+<li><p>字符：用#\表示，如：#\a表示字符a</p>
+</li>
+<li><p>名字：由称为符号的对象表示。如：format、hello-world、<em>db</em></p>
+</li>
+</ul>
+<p>十个字符不能出现在名字中：开括号、闭括号、双引号、单引号、反引号、逗号、冒号、分好、反斜杠、竖线。<br>如真想用的，则需要用反斜杠转义或将含有需要转义的字符名字用竖线包起来。</p>
+<p>读取器将名字转化为符号对象的方式：</p>
+<ul>
+<li>当读取名字时，读取器将所有名字中未转义的字符都转为大写。</li>
+<li>为了确保同一个文本名字总是被读取成相同的符号，读取器保留这个符号之后，在一个称为包的表汇总查询带有相同名字的已有符号，若找不到，则创建一个新的符号并添加到表中。否则返回那个符号。</li>
+</ul>
+<p>名字的约定：</p>
+<ul>
+<li>全局变量：开始和结尾用<em>。如：</em>db*</li>
+<li>常量：开始和结尾用+。如：+zero+</li>
+</ul>
+<p>lisp求值方式：将求值器看做一个函数，接收一个句法良好定义的lisp形式作为参数并返回一个值。</p>
+<p>原子可被分为两个类别：符号和所有其他内容。<br>符号在作为lisp形式被求值时会被看作一个变量名，并会被求值为该变量的当前值。<br>所有原子都是自求值对象。</p>
+<p>lisp中的真假值为：T和NIL<br>其中NIL既是原子也是列表，nil是空列表。<br>另一类自求值符号是关键字符号(以冒号开始的符号)，当读取器保留这样一个名字时，会自动定义一个以此命名的常量变量并以该符号作为其值。</p>
+<h1 id="函数调用"><a href="#函数调用" class="headerlink" title="函数调用"></a>函数调用</h1><p>函数调用规则：除第一个以外，所有的列表元素它们自身必须是一个形态良好的lisp形式。<br>调用格式：(函数名 参数列表)</p>
+<p>函数的所有参数都在函数被调用之前求值。</p>
+<h1 id="特殊操作符"><a href="#特殊操作符" class="headerlink" title="特殊操作符"></a>特殊操作符</h1><p>如：if<br>if规则：对第一个表达式求值，为非nil则执行第二个表达式，否则执行第三个表达式。<br>quote规则：接收一个参数，并不求值返回。即：将参数不经处理直接返回。语法糖为：’(单引号)</p>
+<h1 id="宏"><a href="#宏" class="headerlink" title="宏"></a>宏</h1><p>宏是一个以S-表达式为其参数的函数，并返回一个lisp形式然后对其求值并用改制取代宏形式。</p>
+<p>宏形式的求值过程：</p>
+<ul>
+<li>首先宏形式的元素不经求值即被传递到宏函数里</li>
+<li>其次，由宏函数所返回的形式(展开式)按照正常的求值规则进行求值。<br>即宏的求值一般为两个阶段：宏展开阶段、展开式求值阶段。</li>
+</ul>
+<h1 id="真、假、等价"><a href="#真、假、等价" class="headerlink" title="真、假、等价"></a>真、假、等价</h1><p>符号nil是唯一的一个假值。其他所有的都是真值。<br>符号T是标准的真值。<br>等价</p>
+<ul>
+<li><p>eq：用来测试“对象标识”，只有当两个对象相同时，才等价。如：相同值的数字和字符用eq比较是不等价的。</p>
+</li>
+<li><p>eql：与eq相似，可保证当相同类型的两个对象标识相同的数字或字符值时，才等价。</p>
+</li>
+<li><p>equal：具有相同内容，就等价。</p>
+</li>
+<li><p>equalp：在比较字符串时忽略大小写。</p>
+</li>
+</ul>
+<h1 id="格式化代码"><a href="#格式化代码" class="headerlink" title="格式化代码"></a>格式化代码</h1><p>​    保持美观的代码风格，可方便查找错误及阅读代码。</p>
 
       
     </div>
+	<div>
+		
+		<div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">------ END ------</div>
+    
+</div>
+		
+	</div>
+    
+    
+    
 
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>感谢您的打赏，您的鼓励将是我最大的动力!</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/Blog/images/wechatpay.jpg" alt="万能的小明 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/Blog/images/alipay.jpg" alt="万能的小明 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    万能的小明
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://bangsong.github.io/Blog/Lisp/Common Lisp译本笔记3之第四章 语法和语义/" title="第四章：语法和语义">https://bangsong.github.io/Blog/Lisp/Common Lisp译本笔记3之第四章 语法和语义/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/Blog/tags/Lisp/" rel="tag"><i class="fa fa-tag"></i> Lisp</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/Blog/Lisp/Common Lisp译本笔记2之第三章：简单的数据库实现(源码)/" rel="next" title="第三章：简单的数据库实现(源码)">
+                <i class="fa fa-chevron-left"></i> 第三章：简单的数据库实现(源码)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/Blog/Lisp/Common Lisp译本笔记4之第五章 函数/" rel="prev" title="第五章：函数">
+                第五章：函数 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -399,6 +632,13 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
 
         </div>
         
@@ -419,8 +659,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -514,6 +763,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#S-表达式"><span class="nav-number">1.</span> <span class="nav-text">S-表达式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#函数调用"><span class="nav-number">2.</span> <span class="nav-text">函数调用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#特殊操作符"><span class="nav-number">3.</span> <span class="nav-text">特殊操作符</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#宏"><span class="nav-number">4.</span> <span class="nav-text">宏</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#真、假、等价"><span class="nav-number">5.</span> <span class="nav-text">真、假、等价</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#格式化代码"><span class="nav-number">6.</span> <span class="nav-text">格式化代码</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -679,6 +944,10 @@
 
 
   
+  <script type="text/javascript" src="/Blog/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/Blog/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
