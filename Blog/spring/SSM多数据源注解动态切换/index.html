@@ -94,10 +94,12 @@
 <meta property="og:site_name" content="XGamer">
 <meta property="og:description" content="创建项目就跳过了，可以查看我之前写的一篇SSM框架搭建 此文章前提是SSM基本配置已经完成，可以连接单数源。 有两种方法，但大致一样，第一种是第一次找到的，但只能在controller层注解，从代码分工来讲，controller不应该处理数据方面的问题，所以第一种方法不推荐，第二种是在service层注解，推荐使用。 方法1第一步：修改db.properties文件 123456789101112">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-22T09:35:41.382Z">
+<meta property="og:image" content="http://pfma8m0fx.bkt.clouddn.com/20180622163704623.png">
+<meta property="og:updated_time" content="2018-09-25T15:27:34.171Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SSM多数据源注解动态切换">
 <meta name="twitter:description" content="创建项目就跳过了，可以查看我之前写的一篇SSM框架搭建 此文章前提是SSM基本配置已经完成，可以连接单数源。 有两种方法，但大致一样，第一种是第一次找到的，但只能在controller层注解，从代码分工来讲，controller不应该处理数据方面的问题，所以第一种方法不推荐，第二种是在service层注解，推荐使用。 方法1第一步：修改db.properties文件 123456789101112">
+<meta name="twitter:image" content="http://pfma8m0fx.bkt.clouddn.com/20180622163704623.png">
 
 
 
@@ -349,8 +351,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-09-22T17:35:41+08:00">
-                2018-09-22
+              <time title="更新于" itemprop="dateModified" datetime="2018-09-25T23:27:34+08:00">
+                2018-09-25
               </time>
             
           </span>
@@ -466,7 +468,7 @@
 <p>在conrtoller中的方法上使用：@DataSourceC(dataSource=”数据源ID”)即可，测试代码如下：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RequestMapping</span>(<span class="string">"test"</span>)</span><br><span class="line"><span class="meta">@ResponseBody</span></span><br><span class="line"><span class="meta">@DataSourceC</span>(dataSource=<span class="string">"dataSourceE"</span>)</span><br><span class="line"><span class="function"><span class="keyword">public</span> List <span class="title">test</span><span class="params">()</span></span>&#123;</span><br><span class="line">    List  result = dataGraphService.test();</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>测试结果如下：</p>
-<p><img src="" alt="https://img-blog.csdn.net/20180622163704623?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0JhbmdTb25n/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70"></p>
+<p><img src="http://pfma8m0fx.bkt.clouddn.com/20180622163704623.png" alt=""></p>
 <p>如图，测试通过，可以注解改变数据源。参考文章地址：<a href="https://blog.csdn.net/weixin_38897274/article/details/78529940" target="_blank" rel="noopener">https://blog.csdn.net/weixin_38897274/article/details/78529940</a></p>
 <h1 id="方法2"><a href="#方法2" class="headerlink" title="方法2"></a>方法2</h1><p>1、创建接口<strong>DataSource</strong>，用于定义注解。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.DV.entity;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.lang.annotation.ElementType;</span><br><span class="line"><span class="keyword">import</span> java.lang.annotation.Target;</span><br><span class="line"><span class="keyword">import</span> java.lang.annotation.Retention;</span><br><span class="line"><span class="keyword">import</span> java.lang.annotation.RetentionPolicy;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Retention</span>(RetentionPolicy.RUNTIME)</span><br><span class="line"><span class="meta">@Target</span>(ElementType.METHOD)</span><br><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> DataSource &#123;</span><br><span class="line">    <span class="function">String <span class="title">value</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
