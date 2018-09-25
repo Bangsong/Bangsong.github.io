@@ -948,18 +948,18 @@
 
 
   <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
-  
+  //<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+   <script src="/Blog/js/src/Valine.min.js"></script>  //���ø����صı����ļ��Լ��ټ����ٶ�
   <script type="text/javascript">
     var GUEST = ['nick','mail','link'];
-    var guest = 'nick';
+    var guest = 'nick,mail';
     guest = guest.split(',').filter(item=>{
       return GUEST.indexOf(item)>-1;
     });
     new Valine({
         el: '#comments' ,
         verify: false,
-        notify: true,
+        notify: false,
         appId: 'YYej8mDqfFzidCKv9EmxmrJt-gzGzoHsz',
         appKey: 'vSBnRthq0cREdhAgPYzzsnGQ',
         placeholder: '疑问或建议，请留言.若需要帮助，请Email.',
