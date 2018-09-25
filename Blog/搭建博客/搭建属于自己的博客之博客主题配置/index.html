@@ -1137,7 +1137,7 @@
           repo: 'gitTalk',
           owner: 'Bangsong',
           admin: ['Bangsong'], 
-          id: location.pathname,
+          id: md5(location.pathname),
           distractionFreeMode: 'true'
         })
         gitalk.render('gitalk-container')           
