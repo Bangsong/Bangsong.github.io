@@ -381,16 +381,6 @@
 
           
             
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/Blog/spring/SSM多数据源注解动态切换/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/Blog/spring/SSM多数据源注解动态切换/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
           
 
           
@@ -618,8 +608,9 @@
           
 
   
-    <div class="comments" id="comments">
-    </div>
+	<div class="comments" id="comments">
+		<div id="gitalk-container"></div>
+	</div>
   
 
 
@@ -971,28 +962,23 @@
 
 
 
-  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
-  
-  <script type="text/javascript">
-    var GUEST = ['nick','mail','link'];
-    var guest = 'nick,mail';
-    guest = guest.split(',').filter(item=>{
-      return GUEST.indexOf(item)>-1;
-    });
-    new Valine({
-        el: '#comments' ,
-        verify: false,
-        notify: true,
-        appId: 'PUVRI86wLIGAti4nNU0xvbAz-gzGzoHsz',
-        appKey: 'gaCjN2Q5yFuttWWvoUkt8Yev',
-        placeholder: '疑问或建议，请留言.若需要帮助，请附上联系方式.',
-        avatar:'mm',
-        guest_info:guest,
-        pageSize:'10' || 10,
-    });
-  </script>
 
+
+  <link rel="stylesheet" href="/Blog/lib/gitalk/gitalk.css">
+
+  <script src="/Blog/lib/gitalk/gitalk.min.js"></script>
+   <script type="text/javascript">
+        var gitalk = new Gitalk({
+          clientID: 'b2623d23cddf8af5e2a3',
+          clientSecret: '03dc02a4858a6e87750d01cf2eb9f95cab74e313',
+          repo: 'https://github.com/Bangsong/gitTalk.git',
+          owner: 'Bangsong',
+          admin: ['Bangsong'], 
+          id: location.pathname,
+          distractionFreeMode: 'true'
+        })
+        gitalk.render('gitalk-container')           
+       </script>
 
 
   
