@@ -382,6 +382,16 @@
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/Blog/spring/SSM框架搭建/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/Blog/spring/SSM框架搭建/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -580,6 +590,16 @@ Maven→勾选Create from archetype→maven-archetype-webapp，然后一直下�
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/Blog/spring/SSM多数据源注解动态切换/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/Blog/spring/SSM多数据源注解动态切换/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -775,6 +795,16 @@ Maven→勾选Create from archetype→maven-archetype-webapp，然后一直下�
           
 
           
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/Blog/spring/springmvc初识/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/Blog/spring/springmvc初识/" itemprop="commentCount"></span>
+                </a>
+              </span>
             
           
 
@@ -1214,6 +1244,28 @@ GroupId和Artifactld自己随便填写，最好有意义，然后一直next
 
 
 
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: true,
+        appId: 'YYej8mDqfFzidCKv9EmxmrJt-gzGzoHsz',
+        appKey: 'vSBnRthq0cREdhAgPYzzsnGQ',
+        placeholder: '疑问或建议，请留言.若需要帮助，请附上联系方式.',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
 
 
 
