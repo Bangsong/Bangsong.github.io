@@ -98,7 +98,7 @@
 <meta property="og:image" content="http://pfma8m0fx.bkt.clouddn.com/20180926140359.png">
 <meta property="og:image" content="http://pfma8m0fx.bkt.clouddn.com/20180926202852.png">
 <meta property="og:image" content="http://pfma8m0fx.bkt.clouddn.com/20180926211920.png">
-<meta property="og:updated_time" content="2018-09-26T13:19:53.274Z">
+<meta property="og:updated_time" content="2018-09-26T13:20:14.986Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="搭建属于自己的博客之添加评论功能">
 <meta name="twitter:description" content="我昨晚耗费了几个小时，终于设置添加好了评论功能。我试了两个评论系统，最终选择了gitlak。 添加valine评论注册Leancloud 在Leancloud注册一个账号，名字随意  创建一个应用   然后应用→设置→应用key，拿到自己的appid和appkey。 ​       配置valine​    在主题配置文件(hexo\blog\themes\next\_config.yml)中搜索">
@@ -354,7 +354,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-09-26T21:19:53+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2018-09-26T21:20:14+08:00">
                 2018-09-26
               </time>
             
@@ -498,7 +498,7 @@
 <figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.gt-header</span> <span class="selector-tag">a</span>, <span class="selector-class">.gt-comments</span> <span class="selector-tag">a</span>, <span class="selector-class">.gt-popup</span> a</span><br><span class="line">  <span class="attribute">border-bottom</span>: none;</span><br><span class="line"><span class="selector-class">.gt-container</span> <span class="selector-class">.gt-popup</span> <span class="selector-class">.gt-action</span><span class="selector-class">.is--active</span>:before</span><br><span class="line">  <span class="attribute">top</span>: <span class="number">0.7em</span>;</span><br></pre></td></tr></table></figure>
 <h4 id="修改third-party-styl"><a href="#修改third-party-styl" class="headerlink" title="修改third-party.styl"></a>修改third-party.styl</h4><p>​    修改<code>hexo\blog\themes\next\css\_common\components\third-party\third-party.styl</code>，添加代码：</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@import "gitalk";</span><br></pre></td></tr></table></figure>
-<h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>​    最后，重新生成发布就行了。需要注意的是每一篇文章第一次都需要你手动点击初始化一个issues，否则就会出现下面的结果。</p>
+<h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>​    最后，重新生成发布就行了。需要注意的是每一篇文章第一次都需要你手动点击登录初始化一个issues，否则就会出现下面的结果。</p>
 <p><img src="http://pfma8m0fx.bkt.clouddn.com/20180926211920.png" alt=""></p>
 <p>​    另外附上一些配置gitalk错误的讨论链接<a href="https://github.com/gitalk/gitalk/issues/115#issuecomment-375945296" target="_blank" rel="noopener">点击查看</a>，希望对你有所帮助。</p>
 
