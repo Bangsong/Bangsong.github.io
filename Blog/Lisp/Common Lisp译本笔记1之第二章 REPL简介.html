@@ -74,7 +74,7 @@
 
 
 
-  <meta name="keywords" content="XGamer, Bangsong" />
+  <meta name="keywords" content="Lisp," />
 
 
 
@@ -85,17 +85,18 @@
 
 
 
-<meta name="description" content="个人博客">
+<meta name="description" content="common lisp源文件扩展名一般为.lisp或.cl emacs命令：C-c C-q调用：slime-close-parens-at-point。将插入必要数量的闭括号以匹配当前的所有开括号。 emacs命令：C-c C-c可以编译光标所在的当前lisp代码 emacs命令：C-c C-z可以回到REPL(lisp编译环境) emacs命令：在REPL中输入逗号，则在emacs底部输入qui">
+<meta name="keywords" content="Lisp">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ICO(xml配置版)">
-<meta property="og:url" content="https://chinaxnet.cn/uncategorized/ICO-xml配置版/index.html">
+<meta property="og:title" content="第二章：REPL简介">
+<meta property="og:url" content="https://chinaxnet.cn/Lisp/Common Lisp译本笔记1之第二章 REPL简介.html">
 <meta property="og:site_name" content="XGamer">
-<meta property="og:description" content="个人博客">
+<meta property="og:description" content="common lisp源文件扩展名一般为.lisp或.cl emacs命令：C-c C-q调用：slime-close-parens-at-point。将插入必要数量的闭括号以匹配当前的所有开括号。 emacs命令：C-c C-c可以编译光标所在的当前lisp代码 emacs命令：C-c C-z可以回到REPL(lisp编译环境) emacs命令：在REPL中输入逗号，则在emacs底部输入qui">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-28T06:57:17.207Z">
+<meta property="og:updated_time" content="2018-09-25T01:45:02.133Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ICO(xml配置版)">
-<meta name="twitter:description" content="个人博客">
+<meta name="twitter:title" content="第二章：REPL简介">
+<meta name="twitter:description" content="common lisp源文件扩展名一般为.lisp或.cl emacs命令：C-c C-q调用：slime-close-parens-at-point。将插入必要数量的闭括号以匹配当前的所有开括号。 emacs命令：C-c C-c可以编译光标所在的当前lisp代码 emacs命令：C-c C-z可以回到REPL(lisp编译环境) emacs命令：在REPL中输入逗号，则在emacs底部输入qui">
 
 
 
@@ -125,13 +126,13 @@
 
 
 
-  <link rel="canonical" href="https://chinaxnet.cn/uncategorized/ICO-xml配置版/"/>
+  <link rel="canonical" href="https://chinaxnet.cn/Lisp/Common Lisp译本笔记1之第二章 REPL简介.html"/>
 
 
 
 
 
-  <title>ICO(xml配置版) | XGamer</title>
+  <title>第二章：REPL简介 | XGamer</title>
   
 
 
@@ -302,7 +303,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://chinaxnet.cn/Blog/uncategorized/ICO-xml配置版/">
+    <link itemprop="mainEntityOfPage" href="https://chinaxnet.cn/Blog/Lisp/Common Lisp译本笔记1之第二章 REPL简介.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="万能的小明">
@@ -319,7 +320,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">ICO(xml配置版)</h1>
+          <h1 class="post-title" itemprop="name headline">第二章：REPL简介</h1>
         
 
         <div class="post-meta">
@@ -331,8 +332,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-28T13:59:37+08:00">
-                2018-09-28
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-25T09:33:26+08:00">
+                2018-09-25
               </time>
             
 
@@ -347,12 +348,34 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-09-28T14:57:17+08:00">
-                2018-09-28
+              <time title="更新于" itemprop="dateModified" datetime="2018-09-25T09:45:02+08:00">
+                2018-09-25
               </time>
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Blog/categories/Lisp/" itemprop="url" rel="index">
+                    <span itemprop="name">Lisp</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -380,7 +403,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  0
+                  245
                 </span>
               
 
@@ -417,7 +440,16 @@
       
 
       
-        
+        <p>common lisp源文件扩展名一般为.lisp或.cl</p>
+<p>emacs命令：C-c C-q调用：slime-close-parens-at-point。将插入必要数量的闭括号以匹配当前的所有开括号。</p>
+<p>emacs命令：C-c C-c可以编译光标所在的当前lisp代码</p>
+<p>emacs命令：C-c C-z可以回到REPL(lisp编译环境)</p>
+<p>emacs命令：在REPL中输入逗号，则在emacs底部输入quit或sayoonara，回车即可退出REPL。</p>
+<p>emacs命令：从调试器中退出：q</p>
+<p>在REPL中使用load可加载lisp文件。加载完成之后则文件中的代码就被编译了。<br>如：(load “test.lisp”)</p>
+<p>加载文件中有用定义的方法：先用compile-file编译，然后再用load加载编译后产生的文件，即FASL文件(快速加载文件)<br>如：(load (compile-file “test.lisp”))</p>
+<p>eamcs命令：C-c C-l调用slime-load-file。加载文件<br>emacs命令：C-c C-k可以编译并加载那个当前缓冲区所关联的文件</p>
+
       
     </div>
 	<div>
@@ -475,7 +507,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://chinaxnet.cn/uncategorized/ICO-xml配置版/" title="ICO(xml配置版)">https://chinaxnet.cn/uncategorized/ICO-xml配置版/</a>
+    <a href="https://chinaxnet.cn/Lisp/Common Lisp译本笔记1之第二章 REPL简介.html" title="第二章：REPL简介">https://chinaxnet.cn/Lisp/Common Lisp译本笔记1之第二章 REPL简介.html</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -488,6 +520,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/Blog/tags/Lisp/" rel="tag"><i class="fa fa-tag"></i> Lisp</a>
+          
+        </div>
+      
 
       
       
@@ -497,8 +535,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/Blog/Oralce数据库/数据库迁移/" rel="next" title="数据库迁移">
-                <i class="fa fa-chevron-left"></i> 数据库迁移
+              <a href="/Blog/Lisp/Windows下Lisp环境搭建.html" rel="next" title="Windows下Lisp环境搭建">
+                <i class="fa fa-chevron-left"></i> Windows下Lisp环境搭建
               </a>
             
           </div>
@@ -506,6 +544,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/Blog/Lisp/Common Lisp译本笔记2之第三章：简单的数据库实现(源码).html" rel="prev" title="第三章：简单的数据库实现(源码)">
+                第三章：简单的数据库实现(源码) <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>

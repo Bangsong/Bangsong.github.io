@@ -85,18 +85,18 @@
 
 
 
-<meta name="description" content="前期准备工具：  Emacs：Emacs下载地址，附上emacs26百度云链接，密码：vme1 SBCL：SBCL下载地址，附上SBCL百度云链接，密码：6qdy Sline：gitHub地址，附上Sline百度云链接，密码：nlml  安装安装Emacs 将下载下来的压缩文件解压，即可，不需要安装。  在windows下，一开始是找不到.emacs配置文件的，需要打开emacs随便更改一下配置，">
+<meta name="description" content="所有的lisp程序的最基本的组成：函数、变量、宏。函数用宏defun定义格式：(defun 函数名 (形参列表) 函数体)如：(defun say (str) (format t “~A” str))约定：  一般类型转换的函数会在名字中使用→ 将一个字符串转为微件(widget)的函数会叫做string-&amp;gt;widget 函数名中的连接符不是下划线，而是横线。  在函数中紧跟这个形参列表之后">
 <meta name="keywords" content="Lisp">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Windows下Lisp环境搭建">
-<meta property="og:url" content="https://chinaxnet.cn/Lisp/Windows下Lisp环境搭建/index.html">
+<meta property="og:title" content="第五章：函数">
+<meta property="og:url" content="https://chinaxnet.cn/Lisp/Common Lisp译本笔记4之第五章 函数.html">
 <meta property="og:site_name" content="XGamer">
-<meta property="og:description" content="前期准备工具：  Emacs：Emacs下载地址，附上emacs26百度云链接，密码：vme1 SBCL：SBCL下载地址，附上SBCL百度云链接，密码：6qdy Sline：gitHub地址，附上Sline百度云链接，密码：nlml  安装安装Emacs 将下载下来的压缩文件解压，即可，不需要安装。  在windows下，一开始是找不到.emacs配置文件的，需要打开emacs随便更改一下配置，">
+<meta property="og:description" content="所有的lisp程序的最基本的组成：函数、变量、宏。函数用宏defun定义格式：(defun 函数名 (形参列表) 函数体)如：(defun say (str) (format t “~A” str))约定：  一般类型转换的函数会在名字中使用→ 将一个字符串转为微件(widget)的函数会叫做string-&amp;gt;widget 函数名中的连接符不是下划线，而是横线。  在函数中紧跟这个形参列表之后">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-25T01:32:19.391Z">
+<meta property="og:updated_time" content="2018-09-25T02:15:03.249Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Windows下Lisp环境搭建">
-<meta name="twitter:description" content="前期准备工具：  Emacs：Emacs下载地址，附上emacs26百度云链接，密码：vme1 SBCL：SBCL下载地址，附上SBCL百度云链接，密码：6qdy Sline：gitHub地址，附上Sline百度云链接，密码：nlml  安装安装Emacs 将下载下来的压缩文件解压，即可，不需要安装。  在windows下，一开始是找不到.emacs配置文件的，需要打开emacs随便更改一下配置，">
+<meta name="twitter:title" content="第五章：函数">
+<meta name="twitter:description" content="所有的lisp程序的最基本的组成：函数、变量、宏。函数用宏defun定义格式：(defun 函数名 (形参列表) 函数体)如：(defun say (str) (format t “~A” str))约定：  一般类型转换的函数会在名字中使用→ 将一个字符串转为微件(widget)的函数会叫做string-&amp;gt;widget 函数名中的连接符不是下划线，而是横线。  在函数中紧跟这个形参列表之后">
 
 
 
@@ -126,13 +126,13 @@
 
 
 
-  <link rel="canonical" href="https://chinaxnet.cn/Lisp/Windows下Lisp环境搭建/"/>
+  <link rel="canonical" href="https://chinaxnet.cn/Lisp/Common Lisp译本笔记4之第五章 函数.html"/>
 
 
 
 
 
-  <title>Windows下Lisp环境搭建 | XGamer</title>
+  <title>第五章：函数 | XGamer</title>
   
 
 
@@ -303,7 +303,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://chinaxnet.cn/Blog/Lisp/Windows下Lisp环境搭建/">
+    <link itemprop="mainEntityOfPage" href="https://chinaxnet.cn/Blog/Lisp/Common Lisp译本笔记4之第五章 函数.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="万能的小明">
@@ -320,7 +320,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Windows下Lisp环境搭建</h1>
+          <h1 class="post-title" itemprop="name headline">第五章：函数</h1>
         
 
         <div class="post-meta">
@@ -332,7 +332,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-25T09:20:41+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-25T09:59:00+08:00">
                 2018-09-25
               </time>
             
@@ -348,7 +348,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-09-25T09:32:19+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2018-09-25T10:15:03+08:00">
                 2018-09-25
               </time>
             
@@ -403,7 +403,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  427
+                  1.6k
                 </span>
               
 
@@ -419,7 +419,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  6
                 </span>
               
             </div>
@@ -440,34 +440,54 @@
       
 
       
-        <h1 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h1><p><strong>工具</strong>：</p>
+        <p>所有的lisp程序的最基本的组成：函数、变量、宏。<br>函数用宏<code>defun</code>定义<br>格式：<code>(defun 函数名 (形参列表) 函数体)</code><br>如：(defun say (str) (format t “~A” str))<br>约定：</p>
 <ul>
-<li>Emacs：<a href="http://ftp.gnu.org/gnu/emacs/windows/" target="_blank" rel="noopener">Emacs下载地址</a>，附上<a href="https://pan.baidu.com/s/1ohu7tKnKgDIYPj5PFPxRNw" target="_blank" rel="noopener">emacs26百度云链接</a>，密码：vme1</li>
-<li>SBCL：<a href="http://www.sbcl.org/platform-table.html" target="_blank" rel="noopener">SBCL下载地址</a>，附上<a href="https://pan.baidu.com/s/1b8sLO7PsKwTKTefk6eH0aA" target="_blank" rel="noopener">SBCL百度云链接</a>，密码：6qdy</li>
-<li>Sline：<a href="https://github.com/slime/slime" target="_blank" rel="noopener">gitHub地址</a>，附上<a href="https://pan.baidu.com/s/1iy0CniaH1nsUvhdZPXcpUA" target="_blank" rel="noopener">Sline百度云链接</a>，密码：nlml</li>
+<li>一般类型转换的函数会在名字中使用→</li>
+<li>将一个字符串转为微件(widget)的函数会叫做string-&gt;widget</li>
+<li>函数名中的连接符不是下划线，而是横线。</li>
 </ul>
-<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><h3 id="安装Emacs"><a href="#安装Emacs" class="headerlink" title="安装Emacs"></a>安装Emacs</h3><ul>
-<li><p>将下载下来的压缩文件解压，即可，不需要安装。</p>
+<p>在函数中紧跟这个形参列表之后的字符串可作为描述函数用途的文档字符串。<br>可通过函数<code>documentation</code>获取。<br>函数将最后一个表达式的值作为整个函数的返回值。也可用return-from在函数任何位置立即返回。<br>函数形参列表<br>必要参数：不用关键字修饰的形参，一般为必要参数。当函数调用时，必须为其提供一个实参，每个形参绑定对应的实参。若实参个数过多或过少，则会报错。<br>可选参数：形参前用关键字<code>&amp;optional</code>修饰。在所有必要形参都被赋值之后，若还有剩余实参，则被赋给可选形参。若未被赋值的可选形参会自动绑定值nil。可设置默认值，用列表表示。如：(b 10)。若可选形参未传值，则使用默认值。若检测是否使用默认值，可用形参名加-supplied-p后缀来判断。如：(b 10 b-supplied-p)。当使用默认值为nil，不使用默认值为T</p>
+<h1 id="函数形参列表"><a href="#函数形参列表" class="headerlink" title="函数形参列表"></a>函数形参列表</h1><ul>
+<li><p>必要参数：不用关键字修饰的形参，一般为必要参数。当函数调用时，必须为其提供一个实参，每个形参绑定对应的实参。若实参个数过多或过少，则会报错。</p>
 </li>
-<li><p>在windows下，一开始是找不到.emacs配置文件的，需要打开emacs随便更改一下配置，保存一下，才能生成.emacs。</p>
-</li>
-<li><p>运行emacs，选择Options，这里面随便更改一个配置项，然后选择save options。则会在下面看到保存.emacs文件路径。然后把刚刚改的配置项再改回来，选择save options。</p>
-</li>
-<li><p>然后去文件夹下找到.emacs文件，这是隐藏文件，一般资源管理器是不显示的，需要勾选“隐藏的项目”。</p>
-</li>
-<li><p>然后打开文件，将下列配置项填入：</p>
-<figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">(<span class="name">setq</span> inferior-lisp-program <span class="string">"C:/Software/lisp/sbcl_1.4.2/sbcl.exe"</span>)<span class="comment">;设置优先使用哪种Common Lisp实现</span></span><br><span class="line">(<span class="name">add-to-list</span> 'load-path <span class="string">"C:/Software/lisp/slime-master/"</span>)<span class="comment">;设置Slime路径</span></span><br><span class="line">(<span class="name">require</span> 'slime)</span><br><span class="line">(<span class="name">slime-setup</span>)</span><br><span class="line">(<span class="name">require</span> 'slime-autoloads)</span><br><span class="line">(<span class="name">slime-setup</span> '(slime-fancy))<span class="comment">;让slime变得更好看，比如把sbcl的*变成CL-USER&gt;</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
+<li><p>可选参数：形参前用关键字&amp;optional修饰。在所有必要形参都被赋值之后，若还有剩余实参，则被赋给可选形参。若未被赋值的可选形参会自动绑定值nil。可设置默认值，用列表表示。如：(b 10)。若可选形参未传值，则使用默认值。若检测是否使用默认值，可用形参名加-supplied-p后缀来判断。如：(b 10 b-supplied-p)。当使用默认值为nil，不使用默认值为T<br>例子:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">(defun test (a &amp;optional (b 10 b-supplied-p))</span><br><span class="line">  (format t &quot;a: ~A b: ~A flag: ~A&quot; a b b-supplied-p))</span><br></pre></td></tr></table></figure>
+<p>测试代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">CL-USER&gt; (test 2)</span><br><span class="line">a: 2 b: 10 flag: NIL</span><br><span class="line">NIL</span><br><span class="line">CL-USER&gt; (test 2 4)</span><br><span class="line">a: 2 b: 4 flag: T</span><br><span class="line">NIL</span><br></pre></td></tr></table></figure>
 <ul>
-<li>保存文件，重启emacs，然后<code>Alt+x</code>，输入slime，即可进入lisp环境。</li>
+<li>剩余参数：形参前用关键字&amp;rest修饰。若当实参个数满足必要形参和可选形参时，剩余实参会被放进一个列表作为剩余形参的值。</li>
 </ul>
-<h1 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h1><ul>
-<li>sbcl安装的时候，默认安装就行，安装时会自动设置sbcl环境变量。（有可能需要重启才能生效，可以先不重启，不行的话重启一下试试）</li>
-<li>emacs配置文件中sbcl 路径中一定要加sbcl.exe</li>
-<li>emacs配置文件中所有的路径用\或/</li>
+<p>例子：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">(defun test (a &amp;optional b &amp;rest values)</span><br><span class="line">  (format t &quot;a: ~A b: ~A values: ~A&quot; a b values))</span><br></pre></td></tr></table></figure>
+<p>测试代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">CL-USER&gt; (test 1 2 3 4 5 6)</span><br><span class="line">a: 1 b: 2 values: (3 4 5 6)</span><br><span class="line">NIL</span><br></pre></td></tr></table></figure>
+<ul>
+<li>关键字参数：形参前用关键字&amp;key修饰。在函数调用时可用:形参名(即关键字)来给特定的形参赋值。此形参也可设置默认值及判断是否使用默认值。用法和可选参数相同。还可以通过列表设置关键字别名，在函数调用时，只能通过别名来赋值。如：((:app a))</li>
 </ul>
-<h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>​    以上就是windows下配置Lisp环境，还有其他的工具可以配置，请自行百度。</p>
+<p>例子：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">(defun test (a &amp;key ((:bp b)) ((:cp c) 3 c-supplied-p) )</span><br><span class="line">  (format t &quot;a: ~A b: ~A c: ~A c-flag: ~A&quot; a b c c-supplied-p))</span><br></pre></td></tr></table></figure>
+<p>测试代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">CL-USER&gt; (test 1 :bp 2)</span><br><span class="line">a: 1 b: 2 c: 3 c-flag: NIL</span><br><span class="line">NIL</span><br><span class="line">CL-USER&gt; (test 1 :cp 4)</span><br><span class="line">a: 1 b: NIL c: 4 c-flag: T</span><br><span class="line">NIL</span><br><span class="line">CL-USER&gt; (test 1 :cp 3)</span><br><span class="line">a: 1 b: NIL c: 3 c-flag: T</span><br><span class="line">NIL</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="混合使用不同形参类型"><a href="#混合使用不同形参类型" class="headerlink" title="混合使用不同形参类型"></a>混合使用不同形参类型</h3><p>混合使用不同形参类型时的声明顺序：必要参数、可选参数、剩余参数、关键字参数。<br>一般组合使用的情况：必要参数和其他的一种类型组合使用。</p>
+<p><strong>关键字参数和剩余参数、可选参数组合使用时会出现奇怪的行为，应避免一起使用。</strong>(若未给可选参数提供值，则会将关键字参数的关键字和值作为可选参数。)</p>
+<p>也有可以组合使用的例子，但暂时先不考虑。</p>
+<p>可选参数仅适用于一些较为分散且不确定调用者会提供值的形参。<br>剩余参数适用于接收可变数量的实参。<br>关键字参数适用于给指定参数赋值。</p>
+<h3 id="函数返回值"><a href="#函数返回值" class="headerlink" title="函数返回值"></a>函数返回值</h3><p>函数默认会将最后一个表达式的值作为整个函数的返回值。</p>
+<p>可使用<code>return-from</code>使函数在特定位置返回。第一个参数为在返回函数中的函数名，第二个参数为返回值。</p>
+<h3 id="作为数据的函数–高阶函数"><a href="#作为数据的函数–高阶函数" class="headerlink" title="作为数据的函数–高阶函数"></a>作为数据的函数–高阶函数</h3><p>一般使用函数名来调用函数，若将函数看成数据则可将函数作为参数传给另一个函数。</p>
+<p>在lisp中，函数是另一种类型的对象。<br>用defun定义一个函数时，创建一个新的函数对象及赋予其一个名字。<br>使用特殊操作符function可获取一个函数的函数对象。接收一个参数并返回参数同名的函数对象。<br>functiong的语法糖为：<code>#&#39;</code></p>
+<p>通过函数对象调用函数的两个函数：<code>funcall</code>和<code>apply</code><br>funcall：用于知道传递给函数的实参个数。第一个参数为：被调用的函数对象，其余的参数为传入函数的参数。<br>apply：第一个参数是被调用的函数对象。第二个参数是一个列表，将传入被调函数的参数放到一个列表中。<br>funcall和apply的区别：funcall应用到被调函数上的参数为单一参数，而apply则将一个列表作为应用参数。</p>
+<p>例子：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">(defun test-fun (fn)</span><br><span class="line">  (funcall fn 1 2 3))</span><br><span class="line">(defun test-app (fn)</span><br><span class="line">  (apply fn &apos;(1 2 3)))</span><br></pre></td></tr></table></figure>
+<p>测试代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">CL-USER&gt; (test-fun #&apos;+)</span><br><span class="line"> </span><br><span class="line">6</span><br><span class="line">CL-USER&gt; (test-app #&apos;+)</span><br><span class="line">6</span><br></pre></td></tr></table></figure>
+<h3 id="匿名函数"><a href="#匿名函数" class="headerlink" title="匿名函数"></a>匿名函数</h3><p>使用lambda表达式可创建一个匿名函数。第一个参数是形参列表，第二个参数是函数体<br>格式：<code>(lambda (形参列表) 函数体)</code><br>lambda表达式重要用途是制作闭包，即捕捉了其创建时环境信息的函数。</p>
+<p>例子：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">(defun test (x y)</span><br><span class="line">  (lambda (x y) (+ x y)) x y)</span><br></pre></td></tr></table></figure>
+<p>测试代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">CL-USER&gt; (test 1 2)</span><br><span class="line"> </span><br><span class="line">2</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -526,7 +546,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://chinaxnet.cn/Lisp/Windows下Lisp环境搭建/" title="Windows下Lisp环境搭建">https://chinaxnet.cn/Lisp/Windows下Lisp环境搭建/</a>
+    <a href="https://chinaxnet.cn/Lisp/Common Lisp译本笔记4之第五章 函数.html" title="第五章：函数">https://chinaxnet.cn/Lisp/Common Lisp译本笔记4之第五章 函数.html</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -554,8 +574,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/Blog/IDEA/IDEA2018最新永久激活方法/" rel="next" title="IDEA2018最新永久激活方法">
-                <i class="fa fa-chevron-left"></i> IDEA2018最新永久激活方法
+              <a href="/Blog/Lisp/Common Lisp译本笔记3之第四章 语法和语义.html" rel="next" title="第四章：语法和语义">
+                <i class="fa fa-chevron-left"></i> 第四章：语法和语义
               </a>
             
           </div>
@@ -564,8 +584,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/Blog/Lisp/Common Lisp译本笔记1之第二章 REPL简介/" rel="prev" title="第二章：REPL简介">
-                第二章：REPL简介 <i class="fa fa-chevron-right"></i>
+              <a href="/Blog/搭建博客/搭建属于自己的博客之添加评论功能.html" rel="prev" title="搭建属于自己的博客之添加评论功能">
+                搭建属于自己的博客之添加评论功能 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -736,7 +756,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前期准备"><span class="nav-number">1.</span> <span class="nav-text">前期准备</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装"><span class="nav-number">2.</span> <span class="nav-text">安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Emacs"><span class="nav-number">2.0.1.</span> <span class="nav-text">安装Emacs</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#注意事项"><span class="nav-number">3.</span> <span class="nav-text">注意事项</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#结语"><span class="nav-number">4.</span> <span class="nav-text">结语</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#函数形参列表"><span class="nav-number">1.</span> <span class="nav-text">函数形参列表</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#混合使用不同形参类型"><span class="nav-number">1.0.1.</span> <span class="nav-text">混合使用不同形参类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#函数返回值"><span class="nav-number">1.0.2.</span> <span class="nav-text">函数返回值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#作为数据的函数–高阶函数"><span class="nav-number">1.0.3.</span> <span class="nav-text">作为数据的函数–高阶函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#匿名函数"><span class="nav-number">1.0.4.</span> <span class="nav-text">匿名函数</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
