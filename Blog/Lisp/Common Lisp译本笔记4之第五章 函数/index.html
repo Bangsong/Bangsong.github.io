@@ -44,7 +44,6 @@
 
 
 
-
   
   
   <link href="/Blog/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
@@ -90,7 +89,7 @@
 <meta name="keywords" content="Lisp">
 <meta property="og:type" content="article">
 <meta property="og:title" content="第五章：函数">
-<meta property="og:url" content="https://bangsong.github.io/Blog/Lisp/Common Lisp译本笔记4之第五章 函数/index.html">
+<meta property="og:url" content="https://chinaxnet.cn/Lisp/Common Lisp译本笔记4之第五章 函数/index.html">
 <meta property="og:site_name" content="XGamer">
 <meta property="og:description" content="所有的lisp程序的最基本的组成：函数、变量、宏。函数用宏defun定义格式：(defun 函数名 (形参列表) 函数体)如：(defun say (str) (format t “~A” str))约定：  一般类型转换的函数会在名字中使用→ 将一个字符串转为微件(widget)的函数会叫做string-&amp;gt;widget 函数名中的连接符不是下划线，而是横线。  在函数中紧跟这个形参列表之后">
 <meta property="og:locale" content="zh-Hans">
@@ -127,7 +126,7 @@
 
 
 
-  <link rel="canonical" href="https://bangsong.github.io/Blog/Lisp/Common Lisp译本笔记4之第五章 函数/"/>
+  <link rel="canonical" href="https://chinaxnet.cn/Lisp/Common Lisp译本笔记4之第五章 函数/"/>
 
 
 
@@ -304,7 +303,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://bangsong.github.io/Blog/Blog/Lisp/Common Lisp译本笔记4之第五章 函数/">
+    <link itemprop="mainEntityOfPage" href="https://chinaxnet.cn/Blog/Lisp/Common Lisp译本笔记4之第五章 函数/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="万能的小明">
@@ -380,16 +379,6 @@
           
 
           
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/Blog/Lisp/Common Lisp译本笔记4之第五章 函数/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/Blog/Lisp/Common Lisp译本笔记4之第五章 函数/" itemprop="commentCount"></span>
-                </a>
-              </span>
             
           
 
@@ -557,7 +546,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://bangsong.github.io/Blog/Lisp/Common Lisp译本笔记4之第五章 函数/" title="第五章：函数">https://bangsong.github.io/Blog/Lisp/Common Lisp译本笔记4之第五章 函数/</a>
+    <a href="https://chinaxnet.cn/Lisp/Common Lisp译本笔记4之第五章 函数/" title="第五章：函数">https://chinaxnet.cn/Lisp/Common Lisp译本笔记4之第五章 函数/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -627,8 +616,9 @@
           
 
   
-    <div class="comments" id="comments">
-    </div>
+	<div class="comments" id="comments">
+		<div id="gitalk-container"></div>
+	</div>
   
 
 
@@ -980,28 +970,23 @@
 
 
 
-  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
-  
-  <script type="text/javascript">
-    var GUEST = ['nick','mail','link'];
-    var guest = 'nick,mail';
-    guest = guest.split(',').filter(item=>{
-      return GUEST.indexOf(item)>-1;
-    });
-    new Valine({
-        el: '#comments' ,
-        verify: false,
-        notify: true,
-        appId: 'PUVRI86wLIGAti4nNU0xvbAz-gzGzoHsz',
-        appKey: 'gaCjN2Q5yFuttWWvoUkt8Yev',
-        placeholder: '疑问或建议，请留言.若需要帮助，请附上联系方式.',
-        avatar:'mm',
-        guest_info:guest,
-        pageSize:'10' || 10,
-    });
-  </script>
 
+
+  <link rel="stylesheet" href="/Blog/lib/gitalk/gitalk.css">
+  <script src="/Blog/lib/gitalk/gitalk.min.js"></script>
+  <script src="/Blog/lib/md5/md5.min.js"></script>
+   <script type="text/javascript">
+        var gitalk = new Gitalk({
+          clientID: 'b2623d23cddf8af5e2a3',
+          clientSecret: 'ad38b339c85c3d71f74f076e3e37e1ae1df5c998',
+          repo: 'gitTalk',
+          owner: 'Bangsong',
+          admin: ['万能的小明'], 
+          id: md5(location.pathname),
+          distractionFreeMode: 'true'
+        })
+        gitalk.render('gitalk-container')           
+       </script>
 
 
   
@@ -1332,6 +1317,21 @@
   
 
   
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
 
   
   

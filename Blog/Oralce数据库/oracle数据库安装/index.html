@@ -44,7 +44,6 @@
 
 
 
-
   
   
   <link href="/Blog/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
@@ -90,7 +89,7 @@
 <meta name="keywords" content="Oralce数据库">
 <meta property="og:type" content="article">
 <meta property="og:title" content="oracle数据库安装">
-<meta property="og:url" content="https://bangsong.github.io/Blog/Oralce数据库/oracle数据库安装/index.html">
+<meta property="og:url" content="https://chinaxnet.cn/Oralce数据库/oracle数据库安装/index.html">
 <meta property="og:site_name" content="XGamer">
 <meta property="og:description" content="下载​    在oracle官网下载页面，选择下载的版本，点击下载(下载需要登录)。 ​    附上两个版本的百度云链接：  oracle11gR2_1of2(x64)（密码：bfbu）,oracle11gR2_2of2（密码：5w9h）， oracle12g(x64)，密码：3lbo  安装解压文件​    将下载下来的两个文件（oracle11g是两个，oracle12g是一个）同时选中解压到">
 <meta property="og:locale" content="zh-Hans">
@@ -151,7 +150,7 @@
 
 
 
-  <link rel="canonical" href="https://bangsong.github.io/Blog/Oralce数据库/oracle数据库安装/"/>
+  <link rel="canonical" href="https://chinaxnet.cn/Oralce数据库/oracle数据库安装/"/>
 
 
 
@@ -328,7 +327,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://bangsong.github.io/Blog/Blog/Oralce数据库/oracle数据库安装/">
+    <link itemprop="mainEntityOfPage" href="https://chinaxnet.cn/Blog/Oralce数据库/oracle数据库安装/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="万能的小明">
@@ -404,16 +403,6 @@
           
 
           
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/Blog/Oralce数据库/oracle数据库安装/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/Blog/Oralce数据库/oracle数据库安装/" itemprop="commentCount"></span>
-                </a>
-              </span>
             
           
 
@@ -597,7 +586,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://bangsong.github.io/Blog/Oralce数据库/oracle数据库安装/" title="oracle数据库安装">https://bangsong.github.io/Blog/Oralce数据库/oracle数据库安装/</a>
+    <a href="https://chinaxnet.cn/Oralce数据库/oracle数据库安装/" title="oracle数据库安装">https://chinaxnet.cn/Oralce数据库/oracle数据库安装/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -667,8 +656,9 @@
           
 
   
-    <div class="comments" id="comments">
-    </div>
+	<div class="comments" id="comments">
+		<div id="gitalk-container"></div>
+	</div>
   
 
 
@@ -1020,28 +1010,23 @@
 
 
 
-  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
-  
-  <script type="text/javascript">
-    var GUEST = ['nick','mail','link'];
-    var guest = 'nick,mail';
-    guest = guest.split(',').filter(item=>{
-      return GUEST.indexOf(item)>-1;
-    });
-    new Valine({
-        el: '#comments' ,
-        verify: false,
-        notify: true,
-        appId: 'PUVRI86wLIGAti4nNU0xvbAz-gzGzoHsz',
-        appKey: 'gaCjN2Q5yFuttWWvoUkt8Yev',
-        placeholder: '疑问或建议，请留言.若需要帮助，请附上联系方式.',
-        avatar:'mm',
-        guest_info:guest,
-        pageSize:'10' || 10,
-    });
-  </script>
 
+
+  <link rel="stylesheet" href="/Blog/lib/gitalk/gitalk.css">
+  <script src="/Blog/lib/gitalk/gitalk.min.js"></script>
+  <script src="/Blog/lib/md5/md5.min.js"></script>
+   <script type="text/javascript">
+        var gitalk = new Gitalk({
+          clientID: 'b2623d23cddf8af5e2a3',
+          clientSecret: 'ad38b339c85c3d71f74f076e3e37e1ae1df5c998',
+          repo: 'gitTalk',
+          owner: 'Bangsong',
+          admin: ['万能的小明'], 
+          id: md5(location.pathname),
+          distractionFreeMode: 'true'
+        })
+        gitalk.render('gitalk-container')           
+       </script>
 
 
   
@@ -1372,6 +1357,21 @@
   
 
   
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
 
   
   

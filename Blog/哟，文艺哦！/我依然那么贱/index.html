@@ -44,7 +44,6 @@
 
 
 
-
   
   
   <link href="/Blog/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
@@ -90,7 +89,7 @@
 <meta name="keywords" content="哟，文艺哦！">
 <meta property="og:type" content="article">
 <meta property="og:title" content="我依然那么贱">
-<meta property="og:url" content="https://bangsong.github.io/Blog/哟，文艺哦！/我依然那么贱/index.html">
+<meta property="og:url" content="https://chinaxnet.cn/哟，文艺哦！/我依然那么贱/index.html">
 <meta property="og:site_name" content="XGamer">
 <meta property="og:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;年少的无知，童年的幼稚，谁还会一直陪伴着不单纯，不够帅，还一直在犯贱的小孩。拥有了太多的无奈，收藏了许多的悲哀，用我冷冷的外表掩盖。失去一次又一次莫名的爱，懂得了一种又一种不应该的伤害，撇下了一切又一切符合真相的明白。结局在不经意看见，空白一片，只剩下了我这个贱贱的小孩，陪寂寞独自忍耐，看泪花在我的爱中绽开，玩弄着哥特式伤害… &amp;nbsp;&amp;nbs">
 <meta property="og:locale" content="zh-Hans">
@@ -127,7 +126,7 @@
 
 
 
-  <link rel="canonical" href="https://bangsong.github.io/Blog/哟，文艺哦！/我依然那么贱/"/>
+  <link rel="canonical" href="https://chinaxnet.cn/哟，文艺哦！/我依然那么贱/"/>
 
 
 
@@ -304,7 +303,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://bangsong.github.io/Blog/Blog/哟，文艺哦！/我依然那么贱/">
+    <link itemprop="mainEntityOfPage" href="https://chinaxnet.cn/Blog/哟，文艺哦！/我依然那么贱/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="万能的小明">
@@ -380,16 +379,6 @@
           
 
           
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/Blog/哟，文艺哦！/我依然那么贱/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/Blog/哟，文艺哦！/我依然那么贱/" itemprop="commentCount"></span>
-                </a>
-              </span>
             
           
 
@@ -517,7 +506,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://bangsong.github.io/Blog/哟，文艺哦！/我依然那么贱/" title="我依然那么贱">https://bangsong.github.io/Blog/哟，文艺哦！/我依然那么贱/</a>
+    <a href="https://chinaxnet.cn/哟，文艺哦！/我依然那么贱/" title="我依然那么贱">https://chinaxnet.cn/哟，文艺哦！/我依然那么贱/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -545,14 +534,18 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/Blog/哟，文艺哦！/myself度/" rel="next" title="myself度">
+                <i class="fa fa-chevron-left"></i> myself度
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/Blog/哟，文艺哦！/等我四年，那时我们结婚/" rel="prev" title="等我四年，那时我们结婚">
-                等我四年，那时我们结婚 <i class="fa fa-chevron-right"></i>
+              <a href="/Blog/Lisp/Lisp的永恒之道/" rel="prev" title="Lisp的永恒之道">
+                Lisp的永恒之道 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -583,8 +576,9 @@
           
 
   
-    <div class="comments" id="comments">
-    </div>
+	<div class="comments" id="comments">
+		<div id="gitalk-container"></div>
+	</div>
   
 
 
@@ -911,28 +905,23 @@
 
 
 
-  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
-  
-  <script type="text/javascript">
-    var GUEST = ['nick','mail','link'];
-    var guest = 'nick,mail';
-    guest = guest.split(',').filter(item=>{
-      return GUEST.indexOf(item)>-1;
-    });
-    new Valine({
-        el: '#comments' ,
-        verify: false,
-        notify: true,
-        appId: 'PUVRI86wLIGAti4nNU0xvbAz-gzGzoHsz',
-        appKey: 'gaCjN2Q5yFuttWWvoUkt8Yev',
-        placeholder: '疑问或建议，请留言.若需要帮助，请附上联系方式.',
-        avatar:'mm',
-        guest_info:guest,
-        pageSize:'10' || 10,
-    });
-  </script>
 
+
+  <link rel="stylesheet" href="/Blog/lib/gitalk/gitalk.css">
+  <script src="/Blog/lib/gitalk/gitalk.min.js"></script>
+  <script src="/Blog/lib/md5/md5.min.js"></script>
+   <script type="text/javascript">
+        var gitalk = new Gitalk({
+          clientID: 'b2623d23cddf8af5e2a3',
+          clientSecret: 'ad38b339c85c3d71f74f076e3e37e1ae1df5c998',
+          repo: 'gitTalk',
+          owner: 'Bangsong',
+          admin: ['万能的小明'], 
+          id: md5(location.pathname),
+          distractionFreeMode: 'true'
+        })
+        gitalk.render('gitalk-container')           
+       </script>
 
 
   
@@ -1263,6 +1252,21 @@
   
 
   
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
 
   
   

@@ -44,7 +44,6 @@
 
 
 
-
   
   
   <link href="/Blog/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
@@ -90,7 +89,7 @@
 <meta name="keywords" content="搭建博客">
 <meta property="og:type" content="article">
 <meta property="og:title" content="搭建属于自己的博客之添加评论功能">
-<meta property="og:url" content="https://bangsong.github.io/Blog/搭建博客/搭建属于自己的博客之添加评论功能/index.html">
+<meta property="og:url" content="https://chinaxnet.cn/搭建博客/搭建属于自己的博客之添加评论功能/index.html">
 <meta property="og:site_name" content="XGamer">
 <meta property="og:description" content="我昨晚耗费了几个小时，终于设置添加好了评论功能。我试了两个评论系统，最终选择了gitlak。 添加valine评论注册Leancloud 在Leancloud注册一个账号，名字随意  创建一个应用   然后应用→设置→应用key，拿到自己的appid和appkey。 ​       配置valine​    在主题配置文件(hexo\blog\themes\next\_config.yml)中搜索">
 <meta property="og:locale" content="zh-Hans">
@@ -133,7 +132,7 @@
 
 
 
-  <link rel="canonical" href="https://bangsong.github.io/Blog/搭建博客/搭建属于自己的博客之添加评论功能/"/>
+  <link rel="canonical" href="https://chinaxnet.cn/搭建博客/搭建属于自己的博客之添加评论功能/"/>
 
 
 
@@ -310,7 +309,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://bangsong.github.io/Blog/Blog/搭建博客/搭建属于自己的博客之添加评论功能/">
+    <link itemprop="mainEntityOfPage" href="https://chinaxnet.cn/Blog/搭建博客/搭建属于自己的博客之添加评论功能/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="万能的小明">
@@ -386,16 +385,6 @@
           
 
           
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/Blog/搭建博客/搭建属于自己的博客之添加评论功能/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/Blog/搭建博客/搭建属于自己的博客之添加评论功能/" itemprop="commentCount"></span>
-                </a>
-              </span>
             
           
 
@@ -570,7 +559,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://bangsong.github.io/Blog/搭建博客/搭建属于自己的博客之添加评论功能/" title="搭建属于自己的博客之添加评论功能">https://bangsong.github.io/Blog/搭建博客/搭建属于自己的博客之添加评论功能/</a>
+    <a href="https://chinaxnet.cn/搭建博客/搭建属于自己的博客之添加评论功能/" title="搭建属于自己的博客之添加评论功能">https://chinaxnet.cn/搭建博客/搭建属于自己的博客之添加评论功能/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -640,8 +629,9 @@
           
 
   
-    <div class="comments" id="comments">
-    </div>
+	<div class="comments" id="comments">
+		<div id="gitalk-container"></div>
+	</div>
   
 
 
@@ -993,28 +983,23 @@
 
 
 
-  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
-  
-  <script type="text/javascript">
-    var GUEST = ['nick','mail','link'];
-    var guest = 'nick,mail';
-    guest = guest.split(',').filter(item=>{
-      return GUEST.indexOf(item)>-1;
-    });
-    new Valine({
-        el: '#comments' ,
-        verify: false,
-        notify: true,
-        appId: 'PUVRI86wLIGAti4nNU0xvbAz-gzGzoHsz',
-        appKey: 'gaCjN2Q5yFuttWWvoUkt8Yev',
-        placeholder: '疑问或建议，请留言.若需要帮助，请附上联系方式.',
-        avatar:'mm',
-        guest_info:guest,
-        pageSize:'10' || 10,
-    });
-  </script>
 
+
+  <link rel="stylesheet" href="/Blog/lib/gitalk/gitalk.css">
+  <script src="/Blog/lib/gitalk/gitalk.min.js"></script>
+  <script src="/Blog/lib/md5/md5.min.js"></script>
+   <script type="text/javascript">
+        var gitalk = new Gitalk({
+          clientID: 'b2623d23cddf8af5e2a3',
+          clientSecret: 'ad38b339c85c3d71f74f076e3e37e1ae1df5c998',
+          repo: 'gitTalk',
+          owner: 'Bangsong',
+          admin: ['万能的小明'], 
+          id: md5(location.pathname),
+          distractionFreeMode: 'true'
+        })
+        gitalk.render('gitalk-container')           
+       </script>
 
 
   
@@ -1345,6 +1330,21 @@
   
 
   
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
 
   
   

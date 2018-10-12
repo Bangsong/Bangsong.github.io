@@ -44,7 +44,6 @@
 
 
 
-
   
   
   <link href="/Blog/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
@@ -90,7 +89,7 @@
 <meta name="keywords" content="springBoot">
 <meta property="og:type" content="article">
 <meta property="og:title" content="springBoot之HelloWorld">
-<meta property="og:url" content="https://bangsong.github.io/Blog/sprintBoot/springBoot之HelloWorld/index.html">
+<meta property="og:url" content="https://chinaxnet.cn/sprintBoot/springBoot之HelloWorld/index.html">
 <meta property="og:site_name" content="XGamer">
 <meta property="og:description" content="前期准备使用的工具：  IntelliJ IDEA2018.2.3 JDK10.0.2 mysql8.0.11  IntelliJ IDEA下载激活相关文章：Idea2018最新永久激活方法 JDK下载地址：https://www.oracle.com/technetwork/java/javase/downloads/index-jsp-138363.html mysql社区版下载地址：http">
 <meta property="og:locale" content="zh-Hans">
@@ -140,7 +139,7 @@
 
 
 
-  <link rel="canonical" href="https://bangsong.github.io/Blog/sprintBoot/springBoot之HelloWorld/"/>
+  <link rel="canonical" href="https://chinaxnet.cn/sprintBoot/springBoot之HelloWorld/"/>
 
 
 
@@ -317,7 +316,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://bangsong.github.io/Blog/Blog/sprintBoot/springBoot之HelloWorld/">
+    <link itemprop="mainEntityOfPage" href="https://chinaxnet.cn/Blog/sprintBoot/springBoot之HelloWorld/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="万能的小明">
@@ -394,16 +393,6 @@
 
           
             
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/Blog/sprintBoot/springBoot之HelloWorld/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/Blog/sprintBoot/springBoot之HelloWorld/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
           
 
           
@@ -470,7 +459,7 @@
 <li>JDK10.0.2</li>
 <li>mysql8.0.11</li>
 </ul>
-<p>IntelliJ IDEA下载激活相关文章：<a href="https://chinaxnet.cn/Blog/IDEA/IDEA2018%E6%9C%80%E6%96%B0%E6%B0%B8%E4%B9%85%E6%BF%80%E6%B4%BB%E6%96%B9%E6%B3%95/" target="_blank" rel="noopener">Idea2018最新永久激活方法</a></p>
+<p>IntelliJ IDEA下载激活相关文章：<a href="https://chinaxnet.cn/Blog/IDEA/IDEA2018%E6%9C%80%E6%96%B0%E6%B0%B8%E4%B9%85%E6%BF%80%E6%B4%BB%E6%96%B9%E6%B3%95/">Idea2018最新永久激活方法</a></p>
 <p>JDK下载地址：<a href="https://www.oracle.com/technetwork/java/javase/downloads/index-jsp-138363.html" target="_blank" rel="noopener">https://www.oracle.com/technetwork/java/javase/downloads/index-jsp-138363.html</a></p>
 <p>mysql社区版下载地址：<a href="https://dev.mysql.com/downloads/mysql/" target="_blank" rel="noopener">https://dev.mysql.com/downloads/mysql/</a></p>
 <p>工具下载好之后，自行百度配置。</p>
@@ -576,7 +565,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://bangsong.github.io/Blog/sprintBoot/springBoot之HelloWorld/" title="springBoot之HelloWorld">https://bangsong.github.io/Blog/sprintBoot/springBoot之HelloWorld/</a>
+    <a href="https://chinaxnet.cn/sprintBoot/springBoot之HelloWorld/" title="springBoot之HelloWorld">https://chinaxnet.cn/sprintBoot/springBoot之HelloWorld/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -646,8 +635,9 @@
           
 
   
-    <div class="comments" id="comments">
-    </div>
+	<div class="comments" id="comments">
+		<div id="gitalk-container"></div>
+	</div>
   
 
 
@@ -999,28 +989,23 @@
 
 
 
-  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
-  
-  <script type="text/javascript">
-    var GUEST = ['nick','mail','link'];
-    var guest = 'nick,mail';
-    guest = guest.split(',').filter(item=>{
-      return GUEST.indexOf(item)>-1;
-    });
-    new Valine({
-        el: '#comments' ,
-        verify: false,
-        notify: true,
-        appId: 'PUVRI86wLIGAti4nNU0xvbAz-gzGzoHsz',
-        appKey: 'gaCjN2Q5yFuttWWvoUkt8Yev',
-        placeholder: '疑问或建议，请留言.若需要帮助，请附上联系方式.',
-        avatar:'mm',
-        guest_info:guest,
-        pageSize:'10' || 10,
-    });
-  </script>
 
+
+  <link rel="stylesheet" href="/Blog/lib/gitalk/gitalk.css">
+  <script src="/Blog/lib/gitalk/gitalk.min.js"></script>
+  <script src="/Blog/lib/md5/md5.min.js"></script>
+   <script type="text/javascript">
+        var gitalk = new Gitalk({
+          clientID: 'b2623d23cddf8af5e2a3',
+          clientSecret: 'ad38b339c85c3d71f74f076e3e37e1ae1df5c998',
+          repo: 'gitTalk',
+          owner: 'Bangsong',
+          admin: ['万能的小明'], 
+          id: md5(location.pathname),
+          distractionFreeMode: 'true'
+        })
+        gitalk.render('gitalk-container')           
+       </script>
 
 
   
@@ -1351,6 +1336,21 @@
   
 
   
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
 
   
   

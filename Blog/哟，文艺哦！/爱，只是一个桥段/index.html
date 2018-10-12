@@ -44,7 +44,6 @@
 
 
 
-
   
   
   <link href="/Blog/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
@@ -90,7 +89,7 @@
 <meta name="keywords" content="哟，文艺哦！">
 <meta property="og:type" content="article">
 <meta property="og:title" content="爱，只是一个桥段">
-<meta property="og:url" content="https://bangsong.github.io/Blog/哟，文艺哦！/爱，只是一个桥段/index.html">
+<meta property="og:url" content="https://chinaxnet.cn/哟，文艺哦！/爱，只是一个桥段/index.html">
 <meta property="og:site_name" content="XGamer">
 <meta property="og:description" content="不经意，目光交汇的瞬间 是最纯的、不含杂质的感情 但这，并不是一见钟情 一见钟情只是因为表面的光彩 偶尔的一个魅惑表情映入眼帘 这时才发现对面的那个人想去了解 试着去接触，试着去喜欢 有的会发现，那个人并不是自己在等的另一半 有的会发现，那人才是自己找的另一半 然后给点勇气来个深情告白 但，相爱不是想的那么简单 爱情有时也会被误解 在我看来真正的爱情根本不存在 经不起时间的考验的爱情 不是爱情，">
 <meta property="og:locale" content="zh-Hans">
@@ -127,7 +126,7 @@
 
 
 
-  <link rel="canonical" href="https://bangsong.github.io/Blog/哟，文艺哦！/爱，只是一个桥段/"/>
+  <link rel="canonical" href="https://chinaxnet.cn/哟，文艺哦！/爱，只是一个桥段/"/>
 
 
 
@@ -304,7 +303,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://bangsong.github.io/Blog/Blog/哟，文艺哦！/爱，只是一个桥段/">
+    <link itemprop="mainEntityOfPage" href="https://chinaxnet.cn/Blog/哟，文艺哦！/爱，只是一个桥段/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="万能的小明">
@@ -380,16 +379,6 @@
           
 
           
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/Blog/哟，文艺哦！/爱，只是一个桥段/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/Blog/哟，文艺哦！/爱，只是一个桥段/" itemprop="commentCount"></span>
-                </a>
-              </span>
             
           
 
@@ -532,7 +521,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://bangsong.github.io/Blog/哟，文艺哦！/爱，只是一个桥段/" title="爱，只是一个桥段">https://bangsong.github.io/Blog/哟，文艺哦！/爱，只是一个桥段/</a>
+    <a href="https://chinaxnet.cn/哟，文艺哦！/爱，只是一个桥段/" title="爱，只是一个桥段">https://chinaxnet.cn/哟，文艺哦！/爱，只是一个桥段/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -570,8 +559,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/Blog/哟，文艺哦！/青春，曾经的肆无忌惮/" rel="prev" title="青春，曾经的肆无忌惮">
-                青春，曾经的肆无忌惮 <i class="fa fa-chevron-right"></i>
+              <a href="/Blog/哟，文艺哦！/myself度/" rel="prev" title="myself度">
+                myself度 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -602,8 +591,9 @@
           
 
   
-    <div class="comments" id="comments">
-    </div>
+	<div class="comments" id="comments">
+		<div id="gitalk-container"></div>
+	</div>
   
 
 
@@ -930,28 +920,23 @@
 
 
 
-  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
-  
-  <script type="text/javascript">
-    var GUEST = ['nick','mail','link'];
-    var guest = 'nick,mail';
-    guest = guest.split(',').filter(item=>{
-      return GUEST.indexOf(item)>-1;
-    });
-    new Valine({
-        el: '#comments' ,
-        verify: false,
-        notify: true,
-        appId: 'PUVRI86wLIGAti4nNU0xvbAz-gzGzoHsz',
-        appKey: 'gaCjN2Q5yFuttWWvoUkt8Yev',
-        placeholder: '疑问或建议，请留言.若需要帮助，请附上联系方式.',
-        avatar:'mm',
-        guest_info:guest,
-        pageSize:'10' || 10,
-    });
-  </script>
 
+
+  <link rel="stylesheet" href="/Blog/lib/gitalk/gitalk.css">
+  <script src="/Blog/lib/gitalk/gitalk.min.js"></script>
+  <script src="/Blog/lib/md5/md5.min.js"></script>
+   <script type="text/javascript">
+        var gitalk = new Gitalk({
+          clientID: 'b2623d23cddf8af5e2a3',
+          clientSecret: 'ad38b339c85c3d71f74f076e3e37e1ae1df5c998',
+          repo: 'gitTalk',
+          owner: 'Bangsong',
+          admin: ['万能的小明'], 
+          id: md5(location.pathname),
+          distractionFreeMode: 'true'
+        })
+        gitalk.render('gitalk-container')           
+       </script>
 
 
   
@@ -1282,6 +1267,21 @@
   
 
   
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
 
   
   

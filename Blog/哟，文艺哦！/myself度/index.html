@@ -44,7 +44,6 @@
 
 
 
-
   
   
   <link href="/Blog/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
@@ -90,7 +89,7 @@
 <meta name="keywords" content="哟，文艺哦！">
 <meta property="og:type" content="article">
 <meta property="og:title" content="myself度">
-<meta property="og:url" content="https://bangsong.github.io/Blog/哟，文艺哦！/myself度/index.html">
+<meta property="og:url" content="https://chinaxnet.cn/哟，文艺哦！/myself度/index.html">
 <meta property="og:site_name" content="XGamer">
 <meta property="og:description" content="浅色的微放如那潜藏的伤 我用深色抒写想逃却岁月沉淀的悲腔 却选择黑色灰白调 又添一抹尚未浅放的悲伤 当寂寞摇晃深藏记忆的楚光 黎明在陪伴着夕阳 是否在地球的某一角 你也会偶尔翻了翻已有味的日记 也会偶尔嘴角微扬 当秋天的第一片枯叶落下 它了却了我一季的牵挂 在酒吧里的喧哗 用酒精混泪添加 苦涩、辛辣融合在一起变化 伤随酒精融进了血液 流进了心房沉淀成家 完结我的一直放不下 现在 可以了 那份温暖">
 <meta property="og:locale" content="zh-Hans">
@@ -127,7 +126,7 @@
 
 
 
-  <link rel="canonical" href="https://bangsong.github.io/Blog/哟，文艺哦！/myself度/"/>
+  <link rel="canonical" href="https://chinaxnet.cn/哟，文艺哦！/myself度/"/>
 
 
 
@@ -304,7 +303,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://bangsong.github.io/Blog/Blog/哟，文艺哦！/myself度/">
+    <link itemprop="mainEntityOfPage" href="https://chinaxnet.cn/Blog/哟，文艺哦！/myself度/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="万能的小明">
@@ -380,16 +379,6 @@
           
 
           
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/Blog/哟，文艺哦！/myself度/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/Blog/哟，文艺哦！/myself度/" itemprop="commentCount"></span>
-                </a>
-              </span>
             
           
 
@@ -536,7 +525,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://bangsong.github.io/Blog/哟，文艺哦！/myself度/" title="myself度">https://bangsong.github.io/Blog/哟，文艺哦！/myself度/</a>
+    <a href="https://chinaxnet.cn/哟，文艺哦！/myself度/" title="myself度">https://chinaxnet.cn/哟，文艺哦！/myself度/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -564,8 +553,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/Blog/哟，文艺哦！/青春，曾经的肆无忌惮/" rel="next" title="青春，曾经的肆无忌惮">
-                <i class="fa fa-chevron-left"></i> 青春，曾经的肆无忌惮
+              <a href="/Blog/哟，文艺哦！/爱，只是一个桥段/" rel="next" title="爱，只是一个桥段">
+                <i class="fa fa-chevron-left"></i> 爱，只是一个桥段
               </a>
             
           </div>
@@ -574,8 +563,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/Blog/Lisp/Lisp的永恒之道/" rel="prev" title="Lisp的永恒之道">
-                Lisp的永恒之道 <i class="fa fa-chevron-right"></i>
+              <a href="/Blog/哟，文艺哦！/我依然那么贱/" rel="prev" title="我依然那么贱">
+                我依然那么贱 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -606,8 +595,9 @@
           
 
   
-    <div class="comments" id="comments">
-    </div>
+	<div class="comments" id="comments">
+		<div id="gitalk-container"></div>
+	</div>
   
 
 
@@ -934,28 +924,23 @@
 
 
 
-  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
-  
-  <script type="text/javascript">
-    var GUEST = ['nick','mail','link'];
-    var guest = 'nick,mail';
-    guest = guest.split(',').filter(item=>{
-      return GUEST.indexOf(item)>-1;
-    });
-    new Valine({
-        el: '#comments' ,
-        verify: false,
-        notify: true,
-        appId: 'PUVRI86wLIGAti4nNU0xvbAz-gzGzoHsz',
-        appKey: 'gaCjN2Q5yFuttWWvoUkt8Yev',
-        placeholder: '疑问或建议，请留言.若需要帮助，请附上联系方式.',
-        avatar:'mm',
-        guest_info:guest,
-        pageSize:'10' || 10,
-    });
-  </script>
 
+
+  <link rel="stylesheet" href="/Blog/lib/gitalk/gitalk.css">
+  <script src="/Blog/lib/gitalk/gitalk.min.js"></script>
+  <script src="/Blog/lib/md5/md5.min.js"></script>
+   <script type="text/javascript">
+        var gitalk = new Gitalk({
+          clientID: 'b2623d23cddf8af5e2a3',
+          clientSecret: 'ad38b339c85c3d71f74f076e3e37e1ae1df5c998',
+          repo: 'gitTalk',
+          owner: 'Bangsong',
+          admin: ['万能的小明'], 
+          id: md5(location.pathname),
+          distractionFreeMode: 'true'
+        })
+        gitalk.render('gitalk-container')           
+       </script>
 
 
   
@@ -1286,6 +1271,21 @@
   
 
   
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
 
   
   

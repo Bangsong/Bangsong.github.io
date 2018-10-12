@@ -44,7 +44,6 @@
 
 
 
-
   
   
   <link href="/Blog/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
@@ -90,7 +89,7 @@
 <meta name="keywords" content="spring">
 <meta property="og:type" content="article">
 <meta property="og:title" content="springmvc初识">
-<meta property="og:url" content="https://bangsong.github.io/Blog/spring/springmvc初识/index.html">
+<meta property="og:url" content="https://chinaxnet.cn/spring/springmvc初识/index.html">
 <meta property="og:site_name" content="XGamer">
 <meta property="og:description" content="一、建立项目打开Idea，选择新建项目。  选择Maven项目，勾选上方的Create from archetype。选择maven-archetype-webapp(若此处不是选的maven则需要自己手动导入所需包)  GroupId和Artifactld自己随便填写，最好有意义，然后一直next即可。  二、配置springmvc创建成功之后，如图。点Enable-auto-import  查">
 <meta property="og:locale" content="zh-Hans">
@@ -134,7 +133,7 @@
 
 
 
-  <link rel="canonical" href="https://bangsong.github.io/Blog/spring/springmvc初识/"/>
+  <link rel="canonical" href="https://chinaxnet.cn/spring/springmvc初识/"/>
 
 
 
@@ -311,7 +310,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://bangsong.github.io/Blog/Blog/spring/springmvc初识/">
+    <link itemprop="mainEntityOfPage" href="https://chinaxnet.cn/Blog/spring/springmvc初识/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="万能的小明">
@@ -387,16 +386,6 @@
           
 
           
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/Blog/spring/springmvc初识/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/Blog/spring/springmvc初识/" itemprop="commentCount"></span>
-                </a>
-              </span>
             
           
 
@@ -546,7 +535,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://bangsong.github.io/Blog/spring/springmvc初识/" title="springmvc初识">https://bangsong.github.io/Blog/spring/springmvc初识/</a>
+    <a href="https://chinaxnet.cn/spring/springmvc初识/" title="springmvc初识">https://chinaxnet.cn/spring/springmvc初识/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -584,8 +573,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/Blog/spring/SSM多数据源注解动态切换/" rel="prev" title="SSM多数据源注解动态切换">
-                SSM多数据源注解动态切换 <i class="fa fa-chevron-right"></i>
+              <a href="/Blog/spring/SSM框架搭建/" rel="prev" title="SSM框架搭建">
+                SSM框架搭建 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -616,8 +605,9 @@
           
 
   
-    <div class="comments" id="comments">
-    </div>
+	<div class="comments" id="comments">
+		<div id="gitalk-container"></div>
+	</div>
   
 
 
@@ -969,28 +959,23 @@
 
 
 
-  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
-  
-  <script type="text/javascript">
-    var GUEST = ['nick','mail','link'];
-    var guest = 'nick,mail';
-    guest = guest.split(',').filter(item=>{
-      return GUEST.indexOf(item)>-1;
-    });
-    new Valine({
-        el: '#comments' ,
-        verify: false,
-        notify: true,
-        appId: 'PUVRI86wLIGAti4nNU0xvbAz-gzGzoHsz',
-        appKey: 'gaCjN2Q5yFuttWWvoUkt8Yev',
-        placeholder: '疑问或建议，请留言.若需要帮助，请附上联系方式.',
-        avatar:'mm',
-        guest_info:guest,
-        pageSize:'10' || 10,
-    });
-  </script>
 
+
+  <link rel="stylesheet" href="/Blog/lib/gitalk/gitalk.css">
+  <script src="/Blog/lib/gitalk/gitalk.min.js"></script>
+  <script src="/Blog/lib/md5/md5.min.js"></script>
+   <script type="text/javascript">
+        var gitalk = new Gitalk({
+          clientID: 'b2623d23cddf8af5e2a3',
+          clientSecret: 'ad38b339c85c3d71f74f076e3e37e1ae1df5c998',
+          repo: 'gitTalk',
+          owner: 'Bangsong',
+          admin: ['万能的小明'], 
+          id: md5(location.pathname),
+          distractionFreeMode: 'true'
+        })
+        gitalk.render('gitalk-container')           
+       </script>
 
 
   
@@ -1321,6 +1306,21 @@
   
 
   
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
 
   
   

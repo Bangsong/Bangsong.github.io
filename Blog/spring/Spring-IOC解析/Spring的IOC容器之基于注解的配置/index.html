@@ -44,7 +44,6 @@
 
 
 
-
   
   
   <link href="/Blog/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
@@ -90,7 +89,7 @@
 <meta name="keywords" content="Spring,Spring IOC解析">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Spring的ICO容器之基于注解的配置">
-<meta property="og:url" content="https://bangsong.github.io/Blog/Spring/Spring-IOC解析/Spring的IOC容器之基于注解的配置/index.html">
+<meta property="og:url" content="https://chinaxnet.cn/Spring/Spring-IOC解析/Spring的IOC容器之基于注解的配置/index.html">
 <meta property="og:site_name" content="XGamer">
 <meta property="og:description" content="基于注解的配置​    在学习基于注解的配置前，先了解一下每个注解的作用。   @Component：基本注解，用于标识spring管理的组件，即：标识的类将作为组件加入到spring的IOC容器中。 @Repository：标识数据访问对象或DAO @Service：标识服务层 @Controller： 标识表现层 @Autowired：自动装配Bean   ​    上述的注解标识位置只是建议">
 <meta property="og:locale" content="zh-Hans">
@@ -130,7 +129,7 @@
 
 
 
-  <link rel="canonical" href="https://bangsong.github.io/Blog/Spring/Spring-IOC解析/Spring的IOC容器之基于注解的配置/"/>
+  <link rel="canonical" href="https://chinaxnet.cn/Spring/Spring-IOC解析/Spring的IOC容器之基于注解的配置/"/>
 
 
 
@@ -307,7 +306,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://bangsong.github.io/Blog/Blog/Spring/Spring-IOC解析/Spring的IOC容器之基于注解的配置/">
+    <link itemprop="mainEntityOfPage" href="https://chinaxnet.cn/Blog/Spring/Spring-IOC解析/Spring的IOC容器之基于注解的配置/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="万能的小明">
@@ -394,16 +393,6 @@
           
 
           
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/Blog/Spring/Spring-IOC解析/Spring的IOC容器之基于注解的配置/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/Blog/Spring/Spring-IOC解析/Spring的IOC容器之基于注解的配置/" itemprop="commentCount"></span>
-                </a>
-              </span>
             
           
 
@@ -555,7 +544,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://bangsong.github.io/Blog/Spring/Spring-IOC解析/Spring的IOC容器之基于注解的配置/" title="Spring的ICO容器之基于注解的配置">https://bangsong.github.io/Blog/Spring/Spring-IOC解析/Spring的IOC容器之基于注解的配置/</a>
+    <a href="https://chinaxnet.cn/Spring/Spring-IOC解析/Spring的IOC容器之基于注解的配置/" title="Spring的ICO容器之基于注解的配置">https://chinaxnet.cn/Spring/Spring-IOC解析/Spring的IOC容器之基于注解的配置/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -627,8 +616,9 @@
           
 
   
-    <div class="comments" id="comments">
-    </div>
+	<div class="comments" id="comments">
+		<div id="gitalk-container"></div>
+	</div>
   
 
 
@@ -980,28 +970,23 @@
 
 
 
-  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
-  
-  <script type="text/javascript">
-    var GUEST = ['nick','mail','link'];
-    var guest = 'nick,mail';
-    guest = guest.split(',').filter(item=>{
-      return GUEST.indexOf(item)>-1;
-    });
-    new Valine({
-        el: '#comments' ,
-        verify: false,
-        notify: true,
-        appId: 'PUVRI86wLIGAti4nNU0xvbAz-gzGzoHsz',
-        appKey: 'gaCjN2Q5yFuttWWvoUkt8Yev',
-        placeholder: '疑问或建议，请留言.若需要帮助，请附上联系方式.',
-        avatar:'mm',
-        guest_info:guest,
-        pageSize:'10' || 10,
-    });
-  </script>
 
+
+  <link rel="stylesheet" href="/Blog/lib/gitalk/gitalk.css">
+  <script src="/Blog/lib/gitalk/gitalk.min.js"></script>
+  <script src="/Blog/lib/md5/md5.min.js"></script>
+   <script type="text/javascript">
+        var gitalk = new Gitalk({
+          clientID: 'b2623d23cddf8af5e2a3',
+          clientSecret: 'ad38b339c85c3d71f74f076e3e37e1ae1df5c998',
+          repo: 'gitTalk',
+          owner: 'Bangsong',
+          admin: ['万能的小明'], 
+          id: md5(location.pathname),
+          distractionFreeMode: 'true'
+        })
+        gitalk.render('gitalk-container')           
+       </script>
 
 
   
@@ -1332,6 +1317,21 @@
   
 
   
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
 
   
   
