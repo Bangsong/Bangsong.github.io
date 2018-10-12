@@ -27,9 +27,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[数据库迁移]]></title>
-    <url>%2FBlog%2FOralce%E6%95%B0%E6%8D%AE%E5%BA%93%2F%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%81%E7%A7%BB%2F</url>
-    <content type="text"><![CDATA[创建用户 创建表空间 查看要迁移用户的表空间：select username,default_tablespace from user_users;（查询当前用户表空间） 查看当前表空间文件位置：SELECT * FROM Dba_Data_Files ddf WHERE ddf.tablespace_name = &#39;tableSpace&#39; 切换PDB：alter session set container=PDBORCL（若为oracle12则需要此步骤） 创建表空间： 1234create tablespace 表空间datafile '表空间文件' size 300m autoextend on next 100m; 创建用户12create user 用户名 identified by 密码default tablespace 表空间; 授权1234567891011121314151617181920grant connect to 用户名;grant resource to 用户名;grant CREATE PUBLIC DATABASE LINK,DROP PUBLIC DATABASE LINK to 用户名;grant CREATE DATABASE LINK to 用户名; grant CREATE ANY TYPE to 用户名;grant connect to 用户名;grant alter any index to 用户名;grant alter any table to 用户名;grant alter any trigger to 用户名;grant alter any sequence to 用户名;grant create any index to 用户名;grant create any job to 用户名;grant create any view to 用户名;grant create any trigger to 用户名;grant create procedure to 用户名;grant create table to 用户名;grant create any sequence to 用户名;grant create any view to 用户名;grant DEBUG CONNECT SESSION to 用户名;grant unlimited tablespace to 用户名; 设置pdb用户TNS将SERVICE_NAME设置为pdborcl，正常的是orcl 123456789PDBORCL = (DESCRIPTION = (ADDRESS_LIST = (ADDRESS = (PROTOCOL = TCP)(HOST = localhost)(PORT = 1521)) ) (CONNECT_DATA = (SERVICE_NAME = pdborcl) ) ) 正常用户的TNS 12345678ORCL = (DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = localhost)(PORT = 1521)) (CONNECT_DATA = (SERVER = DEDICATED) (SERVICE_NAME = orcl) ) ) 登录用户​ 使用之前创建用户的账号密码选择pdboracl，点击登录。 可能会用到的命令： 删除表空间及表空间文件：drop tablespace 表空间 including contents and datafiles cascade constraint; 切换PDBORCL：alter session set container=PDBORCL; 切换CDB：alter session set container=CDB$ROOT; 导出数据 导出数据不导出表数据 1exp username/pwd file=导出数据文件 owner=username rows=false 导入数据1imp 新用户/pwd@*** fromuser=原来用户 touser=新用户 file=*:\***.dmp buffer=10240000 这个命令导出，如果导出 导入的用户不一致就要加上 fromuser touser 的参数，如果一致，这两个参数可以不加。 通过plsql导出用户对象​ 登录需要导出的用户，选择如下： ​ 选择导出的数据： 其中，若导出和导入的用户相同，则直接默认就好了，然后设置一下Output file，点击Export就行了。若导出和导入用户不相同，则勾掉Include Owner。 导入用户对象​ 登录要导入的用户，将导出的sql文件拖入然后执行就行了。导入完成后要注意有没有报错，报错的话自行手动修改。]]></content>
+    <title><![CDATA[oracle数据库安装]]></title>
+    <url>%2FBlog%2FOralce%E6%95%B0%E6%8D%AE%E5%BA%93%2Foracle%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%89%E8%A3%85%2F</url>
+    <content type="text"><![CDATA[下载​ 在oracle官网下载页面，选择下载的版本，点击下载(下载需要登录)。 ​ 附上两个版本的百度云链接： oracle11gR2_1of2(x64)（密码：bfbu）,oracle11gR2_2of2（密码：5w9h）， oracle12g(x64)，密码：3lbo 安装解压文件​ 将下载下来的两个文件（oracle11g是两个，oracle12g是一个）同时选中解压到一个文件夹下，解压好之后进入解压的文件夹database，点击setup ​ 配置安全更新​ 勾掉接受安全更新，点击”下一步”，提示”未提供电子邮件地址”，点击”是”。 ​ 安装选项​ 选择第一个选项创建和配置数据库，点击下一步。 ​ 选择系统类​ 根据个人需求选择类型，第一个是桌面类，第二个是服务器类，我选择的是服务器类，点击下一步。 选择数据库安装选项​ 根据需要选择，一般选择第一个选项单实例数据库安装，点击下一步。 选择安装类型​ 这里选择高级安装。 选择数据库版本​ 选择第一个企业版，点击下一步。 指定oracle主目录用户​ 默认就好，点击下一步。 指定安装位置​ 自行选择安装位置。 选择配置类型默认就好一般用途/事务处理。 指定数据库标识符​ 这里我安装的是oracle12g，所以下面会有一个创建为容器数据库的，这个是oracle12g新特性可插拔数据库。若你安装的是oracle11g则不会看到此选项，若是oracle12g，默认就好了。 指定配置选项(非常重要)​ 指定配置选项中，有一个字符集选项，这个非常重要、非常重要、非常重要!!!为什么要强调这个呢，嗯…你吃过亏就知道了，心里的苦说不出。 ​ 若你要迁移数据库的话，一定要看要迁移的数据库的字符集是什么，一般的都会设置SIMPLIFIED CHINESE_CHINA.ZHS16GBK。 注意看三个选项： 使用Unicode：这个使用的是SIMPLIFIED CHINESE_CHINA.AL32UTF8，若你使用这个字符集，则选择。 使用操作系统字符集：注意：这里是使用和操作系统相同的字符集，一般用这个就行，但是有时候服务器的操作系统是全英文的，字符集不一定是ZHS16GBK，所以一定要看后面括号里面的是不是你要选择的字符集。 从以下字符集列表中选择：若以上两种都不是你想要的，则在此选项中找到你想要的字符集就行了。 点击下一步。 ​ 指定数据库存储选择​ 默认就好。 指定管理选项​ 默认就好。 指定恢复选项​ 默认就好。 指定方案口令​ 这里是指定数据库管理员密码的，可以使用第一个为每个管理员设置不同的密码，也可使用第二个为所有管理员设置统一密码。提示密码不符合建议，点击是就行了。 先决条件检查 安装​ 点击安装。 若你在做数据库迁移的事情，可能会出现字符集不对的问题，可以自行百度修改，也可以直接写在oracle实例，重新安装实例。 卸载oracle实例​ 打开cmd,输入：dbca，选择delete database ​ 查看数据库字符集：select * from nls_database_parameters; 中文乱码问题​ 若服务器的操作系统是英文版的，你用plsql打开查询数据发现依旧是乱码，这个时候是因为操作系统没有中文安装包。 ​ 百度云链接：windows server 2012R2操作系统的中文安装包，密码：y904 ​ 下载好安装包之后，win+R运行lpksetup。点击Install display langues。 ​ ​ 然后点击Browse...将下载的文件选中，点击next，等待安装完成。 ​ ​ 设置中文，安装如下操作。 设置之后需要重新登录，这时会提示是否注销，点击log off now。 结语​ 以上就是oracle数据库的安装过程，是为了记录一下，方便以后在做相关事情的时候查阅，希望也可以帮助正在寻找帮助的你。]]></content>
       <categories>
         <category>Oralce数据库</category>
       </categories>
@@ -38,9 +38,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[oracle数据库安装]]></title>
-    <url>%2FBlog%2FOralce%E6%95%B0%E6%8D%AE%E5%BA%93%2Foracle%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%89%E8%A3%85%2F</url>
-    <content type="text"><![CDATA[下载​ 在oracle官网下载页面，选择下载的版本，点击下载(下载需要登录)。 ​ 附上两个版本的百度云链接： oracle11gR2_1of2(x64)（密码：bfbu）,oracle11gR2_2of2（密码：5w9h）， oracle12g(x64)，密码：3lbo 安装解压文件​ 将下载下来的两个文件（oracle11g是两个，oracle12g是一个）同时选中解压到一个文件夹下，解压好之后进入解压的文件夹database，点击setup ​ 配置安全更新​ 勾掉接受安全更新，点击”下一步”，提示”未提供电子邮件地址”，点击”是”。 ​ 安装选项​ 选择第一个选项创建和配置数据库，点击下一步。 ​ 选择系统类​ 根据个人需求选择类型，第一个是桌面类，第二个是服务器类，我选择的是服务器类，点击下一步。 选择数据库安装选项​ 根据需要选择，一般选择第一个选项单实例数据库安装，点击下一步。 选择安装类型​ 这里选择高级安装。 选择数据库版本​ 选择第一个企业版，点击下一步。 指定oracle主目录用户​ 默认就好，点击下一步。 指定安装位置​ 自行选择安装位置。 选择配置类型默认就好一般用途/事务处理。 指定数据库标识符​ 这里我安装的是oracle12g，所以下面会有一个创建为容器数据库的，这个是oracle12g新特性可插拔数据库。若你安装的是oracle11g则不会看到此选项，若是oracle12g，默认就好了。 指定配置选项(非常重要)​ 指定配置选项中，有一个字符集选项，这个非常重要、非常重要、非常重要!!!为什么要强调这个呢，嗯…你吃过亏就知道了，心里的苦说不出。 ​ 若你要迁移数据库的话，一定要看要迁移的数据库的字符集是什么，一般的都会设置SIMPLIFIED CHINESE_CHINA.ZHS16GBK。 注意看三个选项： 使用Unicode：这个使用的是SIMPLIFIED CHINESE_CHINA.AL32UTF8，若你使用这个字符集，则选择。 使用操作系统字符集：注意：这里是使用和操作系统相同的字符集，一般用这个就行，但是有时候服务器的操作系统是全英文的，字符集不一定是ZHS16GBK，所以一定要看后面括号里面的是不是你要选择的字符集。 从以下字符集列表中选择：若以上两种都不是你想要的，则在此选项中找到你想要的字符集就行了。 点击下一步。 ​ 指定数据库存储选择​ 默认就好。 指定管理选项​ 默认就好。 指定恢复选项​ 默认就好。 指定方案口令​ 这里是指定数据库管理员密码的，可以使用第一个为每个管理员设置不同的密码，也可使用第二个为所有管理员设置统一密码。提示密码不符合建议，点击是就行了。 先决条件检查 安装​ 点击安装。 若你在做数据库迁移的事情，可能会出现字符集不对的问题，可以自行百度修改，也可以直接写在oracle实例，重新安装实例。 卸载oracle实例​ 打开cmd,输入：dbca，选择delete database ​ 查看数据库字符集：select * from nls_database_parameters; 中文乱码问题​ 若服务器的操作系统是英文版的，你用plsql打开查询数据发现依旧是乱码，这个时候是因为操作系统没有中文安装包。 ​ 百度云链接：windows server 2012R2操作系统的中文安装包，密码：y904 ​ 下载好安装包之后，win+R运行lpksetup。点击Install display langues。 ​ ​ 然后点击Browse...将下载的文件选中，点击next，等待安装完成。 ​ ​ 设置中文，安装如下操作。 设置之后需要重新登录，这时会提示是否注销，点击log off now。 结语​ 以上就是oracle数据库的安装过程，是为了记录一下，方便以后在做相关事情的时候查阅，希望也可以帮助正在寻找帮助的你。]]></content>
+    <title><![CDATA[数据库迁移]]></title>
+    <url>%2FBlog%2FOralce%E6%95%B0%E6%8D%AE%E5%BA%93%2F%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%81%E7%A7%BB%2F</url>
+    <content type="text"><![CDATA[创建用户 创建表空间 查看要迁移用户的表空间：select username,default_tablespace from user_users;（查询当前用户表空间） 查看当前表空间文件位置：SELECT * FROM Dba_Data_Files ddf WHERE ddf.tablespace_name = &#39;tableSpace&#39; 切换PDB：alter session set container=PDBORCL（若为oracle12则需要此步骤） 创建表空间： 1234create tablespace 表空间datafile '表空间文件' size 300m autoextend on next 100m; 创建用户12create user 用户名 identified by 密码default tablespace 表空间; 授权1234567891011121314151617181920grant connect to 用户名;grant resource to 用户名;grant CREATE PUBLIC DATABASE LINK,DROP PUBLIC DATABASE LINK to 用户名;grant CREATE DATABASE LINK to 用户名; grant CREATE ANY TYPE to 用户名;grant connect to 用户名;grant alter any index to 用户名;grant alter any table to 用户名;grant alter any trigger to 用户名;grant alter any sequence to 用户名;grant create any index to 用户名;grant create any job to 用户名;grant create any view to 用户名;grant create any trigger to 用户名;grant create procedure to 用户名;grant create table to 用户名;grant create any sequence to 用户名;grant create any view to 用户名;grant DEBUG CONNECT SESSION to 用户名;grant unlimited tablespace to 用户名; 设置pdb用户TNS将SERVICE_NAME设置为pdborcl，正常的是orcl 123456789PDBORCL = (DESCRIPTION = (ADDRESS_LIST = (ADDRESS = (PROTOCOL = TCP)(HOST = localhost)(PORT = 1521)) ) (CONNECT_DATA = (SERVICE_NAME = pdborcl) ) ) 正常用户的TNS 12345678ORCL = (DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = localhost)(PORT = 1521)) (CONNECT_DATA = (SERVER = DEDICATED) (SERVICE_NAME = orcl) ) ) 登录用户​ 使用之前创建用户的账号密码选择pdboracl，点击登录。 可能会用到的命令： 删除表空间及表空间文件：drop tablespace 表空间 including contents and datafiles cascade constraint; 切换PDBORCL：alter session set container=PDBORCL; 切换CDB：alter session set container=CDB$ROOT; 导出数据 导出数据不导出表数据 1exp username/pwd file=导出数据文件 owner=username rows=false 导入数据1imp 新用户/pwd@*** fromuser=原来用户 touser=新用户 file=*:\***.dmp buffer=10240000 这个命令导出，如果导出 导入的用户不一致就要加上 fromuser touser 的参数，如果一致，这两个参数可以不加。 通过plsql导出用户对象​ 登录需要导出的用户，选择如下： ​ 选择导出的数据： 其中，若导出和导入的用户相同，则直接默认就好了，然后设置一下Output file，点击Export就行了。若导出和导入用户不相同，则勾掉Include Owner。 导入用户对象​ 登录要导入的用户，将导出的sql文件拖入然后执行就行了。导入完成后要注意有没有报错，报错的话自行手动修改。]]></content>
       <categories>
         <category>Oralce数据库</category>
       </categories>
@@ -214,9 +214,20 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[王子遇见公主，那是童话.少年遇见姑娘，才是现实]]></title>
-    <url>%2FBlog%2F%E5%93%9F%EF%BC%8C%E6%96%87%E8%89%BA%E5%93%A6%EF%BC%81%2F%E7%8E%8B%E5%AD%90%E9%81%87%E8%A7%81%E5%85%AC%E4%B8%BB%EF%BC%8C%E9%82%A3%E6%98%AF%E7%AB%A5%E8%AF%9D.%E5%B0%91%E5%B9%B4%E9%81%87%E8%A7%81%E5%A7%91%E5%A8%98%EF%BC%8C%E6%89%8D%E6%98%AF%E7%8E%B0%E5%AE%9E%2F</url>
-    <content type="text"><![CDATA[&nbsp;&nbsp;&nbsp;&nbsp;在人海中我们总会在不经意间和某个素不相识的人目光相撞，却撞不出火花。因为陌生，因为距离，还因为感觉。 &nbsp;&nbsp;&nbsp;&nbsp;我们从儿提到少年，从幼稚到成熟，一路走来，我们遇见了许多人，也失去了许多人。在分分合合的日子里，我们学会了孤独，学会了一个人生活。谁也不会是你的谁，你也不会是谁的谁。 &nbsp;&nbsp;&nbsp;&nbsp;即使有太多的不舍，但一些人毕竟还是应该遗忘的，是应该埋在心底沉淀为秘密的。因为我们不可能回到过去，即使过去再美好，所以我们已经在过去里死去。 &nbsp;&nbsp;&nbsp;&nbsp;那些曾经让我们美到窒息，甜到掉渣的日子，我们知道，但不会再提起。我们之所以会记忆，不单是那美好，还有那悲伤… &nbsp;&nbsp;&nbsp;&nbsp;我们幻想着某天王子会遇见公主，然后爱到天荒地老。 &nbsp;&nbsp;&nbsp;&nbsp;不曾有悲伤，又哪来的成长。 &nbsp;&nbsp;&nbsp;&nbsp;王子遇见公主，那是童话。少年遇见姑娘，才是现实。 &nbsp;&nbsp;&nbsp;&nbsp;只有经历了才会懂，我们只是少年，遇不到公主。我们只是姑娘，等不到王子。 &nbsp;&nbsp;&nbsp;&nbsp;在以后的以后，我们会明白：其实，王子遇见公主，不是最真的童话。少年遇见姑娘，才是最美的现实。 任尘枫]]></content>
+    <title><![CDATA[我依然那么贱]]></title>
+    <url>%2FBlog%2F%E5%93%9F%EF%BC%8C%E6%96%87%E8%89%BA%E5%93%A6%EF%BC%81%2F%E6%88%91%E4%BE%9D%E7%84%B6%E9%82%A3%E4%B9%88%E8%B4%B1%2F</url>
+    <content type="text"><![CDATA[&nbsp;&nbsp;&nbsp;&nbsp;年少的无知，童年的幼稚，谁还会一直陪伴着不单纯，不够帅，还一直在犯贱的小孩。拥有了太多的无奈，收藏了许多的悲哀，用我冷冷的外表掩盖。失去一次又一次莫名的爱，懂得了一种又一种不应该的伤害，撇下了一切又一切符合真相的明白。结局在不经意看见，空白一片，只剩下了我这个贱贱的小孩，陪寂寞独自忍耐，看泪花在我的爱中绽开，玩弄着哥特式伤害… &nbsp;&nbsp;&nbsp;&nbsp;没有人会明白，我强忍着的悲哀，犯贱只是为了掩埋，没有人会看见，那一个痛哭的黑夜，搞笑般的以为伤痛可以用泪水洗干。可是一切的一切，没有人会发现，没有人会理解，他们见过的我只是在犯贱，徘徊在人类的界限，挑逗着犯贱的极限。我忍耐，躲在一个人的世界，哭花的脸取代阳光下坏坏的笑脸，陪那说谎的自我聊天。一直在讲，一个人的生活很可爱，却不知’爱’与’哀’无法替代，迷惘的等待，不知谁会撕毁我丢去的读白，撕破我那坏坏的笑脸。后来，我便开始了继续犯贱，犯贱式的想念，犯贱式的等待，犯贱式的伤害，犯贱式的去爱… &nbsp;&nbsp;&nbsp;&nbsp;想要完全放开，那一切不属于我的伤害，可我却发现，我已经习惯了收留伤害，已经习惯了每天坏笑的脸，已经习惯了一个人的世界，已经习惯了犯贱。我现在已经忘却了微笑的表现，不会思索幸福的内涵，不能抓住那浪漫的瞬间。我只能对微笑说再见，对浪漫说抱歉，对于这些感觉我不习惯，这一切我早已经无法去改变，只能丢给怀念，埋葬在岁月的灰尘间，让别人去留恋… &nbsp;&nbsp;&nbsp;&nbsp;从小时到成年，从开始到渐远，从以前到现在，我一直都拥有这一双忧郁的眼，一张掩藏在坏笑下哭花的脸，一颗伤感的心，在我的小小世界里面，演绎着一场场邂逅的偶然，一次次牵手的浪漫，一种种分手的伤感，出现之后又消散，只弥漫了犯贱的路线，我沿着人类的界限，玩着犯贱的极限，一直向前，偶尔回头看看犯贱的反面，走下去，直到永远.. &nbsp;&nbsp;&nbsp;&nbsp;现在，我，依然那么贱。 任尘枫]]></content>
+      <categories>
+        <category>哟，文艺哦！</category>
+      </categories>
+      <tags>
+        <tag>哟，文艺哦！</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[myself度]]></title>
+    <url>%2FBlog%2F%E5%93%9F%EF%BC%8C%E6%96%87%E8%89%BA%E5%93%A6%EF%BC%81%2Fmyself%E5%BA%A6%2F</url>
+    <content type="text"><![CDATA[浅色的微放如那潜藏的伤 我用深色抒写想逃却岁月沉淀的悲腔 却选择黑色灰白调 又添一抹尚未浅放的悲伤 当寂寞摇晃深藏记忆的楚光 黎明在陪伴着夕阳 是否在地球的某一角 你也会偶尔翻了翻已有味的日记 也会偶尔嘴角微扬 当秋天的第一片枯叶落下 它了却了我一季的牵挂 在酒吧里的喧哗 用酒精混泪添加 苦涩、辛辣融合在一起变化 伤随酒精融进了血液 流进了心房沉淀成家 完结我的一直放不下 现在 可以了 那份温暖 我已不稀罕 走了 剩一个人 温了自己的度 ​ 任尘枫]]></content>
       <categories>
         <category>哟，文艺哦！</category>
       </categories>
@@ -228,6 +239,17 @@
     <title><![CDATA[爱，只是一个桥段]]></title>
     <url>%2FBlog%2F%E5%93%9F%EF%BC%8C%E6%96%87%E8%89%BA%E5%93%A6%EF%BC%81%2F%E7%88%B1%EF%BC%8C%E5%8F%AA%E6%98%AF%E4%B8%80%E4%B8%AA%E6%A1%A5%E6%AE%B5%2F</url>
     <content type="text"><![CDATA[不经意，目光交汇的瞬间 是最纯的、不含杂质的感情 但这，并不是一见钟情 一见钟情只是因为表面的光彩 偶尔的一个魅惑表情映入眼帘 这时才发现对面的那个人想去了解 试着去接触，试着去喜欢 有的会发现，那个人并不是自己在等的另一半 有的会发现，那人才是自己找的另一半 然后给点勇气来个深情告白 但，相爱不是想的那么简单 爱情有时也会被误解 在我看来真正的爱情根本不存在 经不起时间的考验的爱情 不是爱情，是喜欢 经得起时间的考验的爱情 不是爱情，是亲情 喜欢，爱，血浓于水的亲 爱只是一个桥段 本来就不存在，又何来的未来？ 任尘枫]]></content>
+      <categories>
+        <category>哟，文艺哦！</category>
+      </categories>
+      <tags>
+        <tag>哟，文艺哦！</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[王子遇见公主，那是童话.少年遇见姑娘，才是现实]]></title>
+    <url>%2FBlog%2F%E5%93%9F%EF%BC%8C%E6%96%87%E8%89%BA%E5%93%A6%EF%BC%81%2F%E7%8E%8B%E5%AD%90%E9%81%87%E8%A7%81%E5%85%AC%E4%B8%BB%EF%BC%8C%E9%82%A3%E6%98%AF%E7%AB%A5%E8%AF%9D.%E5%B0%91%E5%B9%B4%E9%81%87%E8%A7%81%E5%A7%91%E5%A8%98%EF%BC%8C%E6%89%8D%E6%98%AF%E7%8E%B0%E5%AE%9E%2F</url>
+    <content type="text"><![CDATA[&nbsp;&nbsp;&nbsp;&nbsp;在人海中我们总会在不经意间和某个素不相识的人目光相撞，却撞不出火花。因为陌生，因为距离，还因为感觉。 &nbsp;&nbsp;&nbsp;&nbsp;我们从儿提到少年，从幼稚到成熟，一路走来，我们遇见了许多人，也失去了许多人。在分分合合的日子里，我们学会了孤独，学会了一个人生活。谁也不会是你的谁，你也不会是谁的谁。 &nbsp;&nbsp;&nbsp;&nbsp;即使有太多的不舍，但一些人毕竟还是应该遗忘的，是应该埋在心底沉淀为秘密的。因为我们不可能回到过去，即使过去再美好，所以我们已经在过去里死去。 &nbsp;&nbsp;&nbsp;&nbsp;那些曾经让我们美到窒息，甜到掉渣的日子，我们知道，但不会再提起。我们之所以会记忆，不单是那美好，还有那悲伤… &nbsp;&nbsp;&nbsp;&nbsp;我们幻想着某天王子会遇见公主，然后爱到天荒地老。 &nbsp;&nbsp;&nbsp;&nbsp;不曾有悲伤，又哪来的成长。 &nbsp;&nbsp;&nbsp;&nbsp;王子遇见公主，那是童话。少年遇见姑娘，才是现实。 &nbsp;&nbsp;&nbsp;&nbsp;只有经历了才会懂，我们只是少年，遇不到公主。我们只是姑娘，等不到王子。 &nbsp;&nbsp;&nbsp;&nbsp;在以后的以后，我们会明白：其实，王子遇见公主，不是最真的童话。少年遇见姑娘，才是最美的现实。 任尘枫]]></content>
       <categories>
         <category>哟，文艺哦！</category>
       </categories>
@@ -250,28 +272,6 @@
     <title><![CDATA[青春，曾经的肆无忌惮]]></title>
     <url>%2FBlog%2F%E5%93%9F%EF%BC%8C%E6%96%87%E8%89%BA%E5%93%A6%EF%BC%81%2F%E9%9D%92%E6%98%A5%EF%BC%8C%E6%9B%BE%E7%BB%8F%E7%9A%84%E8%82%86%E6%97%A0%E5%BF%8C%E6%83%AE%2F</url>
     <content type="text"><![CDATA[&nbsp;&nbsp;&nbsp;&nbsp;我们永远不会忘记曾经，就像我们不曾忘记我们是谁。不管时代如何变迁，我们都无法回到曾经的那个年代，找回曾经的我们。所以我们喜欢上了回忆，习惯上了怀念。 &nbsp;&nbsp;&nbsp;&nbsp;我们会在某个夜深人静，想起某个时光里的喧闹。拿起微微泛黄的照片，才发现我们变老了。看着照片熟悉又陌生的脸庞，泪抹杀了笑脸。 &nbsp;&nbsp;&nbsp;&nbsp;那个年代，我们幼稚中带些稳重。 &nbsp;&nbsp;&nbsp;&nbsp;那个年代，我们幸福中带些悲伤。 &nbsp;&nbsp;&nbsp;&nbsp;那个年代，我们脆弱中带些坚强。 &nbsp;&nbsp;&nbsp;&nbsp;现在，我们知道了那个年代叫做青春。 &nbsp;&nbsp;&nbsp;&nbsp;在青春，我们那么的肆无忌惮。在现在，我们如此的如履薄冰。曾经，我们放肆的笑，撕心的哭，累了以后才发现原来还有人一直陪在身边。如今，我们虚伪的笑，默默的哭，醒了以后，却发现原来一直陪在身边的人都已不在。 &nbsp;&nbsp;&nbsp;&nbsp;因为冲动，所以我们年轻。 &nbsp;&nbsp;&nbsp;&nbsp;因为放肆，所以我们青春。 &nbsp;&nbsp;&nbsp;&nbsp;关于那些曾经的肆无忌惮，我们习惯的叫做了青春。 &nbsp;&nbsp;&nbsp;&nbsp;我们老了，但青春，依然肆无忌惮。 任尘枫]]></content>
-      <categories>
-        <category>哟，文艺哦！</category>
-      </categories>
-      <tags>
-        <tag>哟，文艺哦！</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[我依然那么贱]]></title>
-    <url>%2FBlog%2F%E5%93%9F%EF%BC%8C%E6%96%87%E8%89%BA%E5%93%A6%EF%BC%81%2F%E6%88%91%E4%BE%9D%E7%84%B6%E9%82%A3%E4%B9%88%E8%B4%B1%2F</url>
-    <content type="text"><![CDATA[&nbsp;&nbsp;&nbsp;&nbsp;年少的无知，童年的幼稚，谁还会一直陪伴着不单纯，不够帅，还一直在犯贱的小孩。拥有了太多的无奈，收藏了许多的悲哀，用我冷冷的外表掩盖。失去一次又一次莫名的爱，懂得了一种又一种不应该的伤害，撇下了一切又一切符合真相的明白。结局在不经意看见，空白一片，只剩下了我这个贱贱的小孩，陪寂寞独自忍耐，看泪花在我的爱中绽开，玩弄着哥特式伤害… &nbsp;&nbsp;&nbsp;&nbsp;没有人会明白，我强忍着的悲哀，犯贱只是为了掩埋，没有人会看见，那一个痛哭的黑夜，搞笑般的以为伤痛可以用泪水洗干。可是一切的一切，没有人会发现，没有人会理解，他们见过的我只是在犯贱，徘徊在人类的界限，挑逗着犯贱的极限。我忍耐，躲在一个人的世界，哭花的脸取代阳光下坏坏的笑脸，陪那说谎的自我聊天。一直在讲，一个人的生活很可爱，却不知’爱’与’哀’无法替代，迷惘的等待，不知谁会撕毁我丢去的读白，撕破我那坏坏的笑脸。后来，我便开始了继续犯贱，犯贱式的想念，犯贱式的等待，犯贱式的伤害，犯贱式的去爱… &nbsp;&nbsp;&nbsp;&nbsp;想要完全放开，那一切不属于我的伤害，可我却发现，我已经习惯了收留伤害，已经习惯了每天坏笑的脸，已经习惯了一个人的世界，已经习惯了犯贱。我现在已经忘却了微笑的表现，不会思索幸福的内涵，不能抓住那浪漫的瞬间。我只能对微笑说再见，对浪漫说抱歉，对于这些感觉我不习惯，这一切我早已经无法去改变，只能丢给怀念，埋葬在岁月的灰尘间，让别人去留恋… &nbsp;&nbsp;&nbsp;&nbsp;从小时到成年，从开始到渐远，从以前到现在，我一直都拥有这一双忧郁的眼，一张掩藏在坏笑下哭花的脸，一颗伤感的心，在我的小小世界里面，演绎着一场场邂逅的偶然，一次次牵手的浪漫，一种种分手的伤感，出现之后又消散，只弥漫了犯贱的路线，我沿着人类的界限，玩着犯贱的极限，一直向前，偶尔回头看看犯贱的反面，走下去，直到永远.. &nbsp;&nbsp;&nbsp;&nbsp;现在，我，依然那么贱。 任尘枫]]></content>
-      <categories>
-        <category>哟，文艺哦！</category>
-      </categories>
-      <tags>
-        <tag>哟，文艺哦！</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[myself度]]></title>
-    <url>%2FBlog%2F%E5%93%9F%EF%BC%8C%E6%96%87%E8%89%BA%E5%93%A6%EF%BC%81%2Fmyself%E5%BA%A6%2F</url>
-    <content type="text"><![CDATA[浅色的微放如那潜藏的伤 我用深色抒写想逃却岁月沉淀的悲腔 却选择黑色灰白调 又添一抹尚未浅放的悲伤 当寂寞摇晃深藏记忆的楚光 黎明在陪伴着夕阳 是否在地球的某一角 你也会偶尔翻了翻已有味的日记 也会偶尔嘴角微扬 当秋天的第一片枯叶落下 它了却了我一季的牵挂 在酒吧里的喧哗 用酒精混泪添加 苦涩、辛辣融合在一起变化 伤随酒精融进了血液 流进了心房沉淀成家 完结我的一直放不下 现在 可以了 那份温暖 我已不稀罕 走了 剩一个人 温了自己的度 ​ 任尘枫]]></content>
       <categories>
         <category>哟，文艺哦！</category>
       </categories>
