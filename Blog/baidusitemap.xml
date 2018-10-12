@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://chinaxnet.cn/Blog/Spring/Spring-IOC%E8%A7%A3%E6%9E%90/Spring%E7%9A%84IOC%E5%AE%B9%E5%99%A8%E4%B9%8B%E5%9F%BA%E4%BA%8E%E6%B3%A8%E8%A7%A3%E7%9A%84%E9%85%8D%E7%BD%AE.html</loc>
+    <lastmod>2018-10-12T04:20:33.736Z</lastmod>
+  </url>  <url>
+    <loc>https://chinaxnet.cn/Blog/Spring/Spring-IOC%E8%A7%A3%E6%9E%90/Spring%E7%9A%84IOC%E5%AE%B9%E5%99%A8%E4%B9%8B%E5%9F%BA%E4%BA%8EXML%E7%9A%84%E9%85%8D%E7%BD%AE.html</loc>
+    <lastmod>2018-10-11T09:48:12.760Z</lastmod>
+  </url>  <url>
     <loc>https://chinaxnet.cn/Blog/%E5%93%9F%EF%BC%8C%E6%96%87%E8%89%BA%E5%93%A6%EF%BC%81/%E7%88%B1%EF%BC%8C%E5%8F%AA%E6%98%AF%E4%B8%80%E4%B8%AA%E6%A1%A5%E6%AE%B5.html</loc>
     <lastmod>2018-10-02T12:11:05.879Z</lastmod>
   </url>  <url>
@@ -18,9 +24,6 @@
   </url>  <url>
     <loc>https://chinaxnet.cn/Blog/%E5%93%9F%EF%BC%8C%E6%96%87%E8%89%BA%E5%93%A6%EF%BC%81/%E6%88%91%E4%BE%9D%E7%84%B6%E9%82%A3%E4%B9%88%E8%B4%B1.html</loc>
     <lastmod>2018-10-02T11:20:56.023Z</lastmod>
-  </url>  <url>
-    <loc>https://chinaxnet.cn/Blog/Spring/Spring-IOC%E8%A7%A3%E6%9E%90/Spring%E7%9A%84IOC%E5%AE%B9%E5%99%A8%E4%B9%8B%E5%9F%BA%E4%BA%8EXML%E7%9A%84%E9%85%8D%E7%BD%AE.html</loc>
-    <lastmod>2018-09-30T04:20:48.972Z</lastmod>
   </url>  <url>
     <loc>https://chinaxnet.cn/Blog/Oralce%E6%95%B0%E6%8D%AE%E5%BA%93/oracle%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%89%E8%A3%85.html</loc>
     <lastmod>2018-09-28T08:31:06.284Z</lastmod>

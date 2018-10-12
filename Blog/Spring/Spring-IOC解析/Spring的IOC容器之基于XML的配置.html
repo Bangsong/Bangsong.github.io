@@ -94,7 +94,7 @@
 <meta property="og:description" content="Spring系列不是教程，是学习笔记  官方文档是最好的教程，所以我参照着官方文档逐步学习。 IOC容器简介 IOC：控制反转，也称依赖注入(DI)。 IOC是一种思想，是将主动权调换的过程。  IOC例子：蛋炒饭   没有IOC 去购买原料：米、鸡蛋 然后做饭 吃饭   有了IOC(外卖) 打开外卖App，找到蛋炒饭 下单，等待饭到 吃饭     从上面的例子中，可以看出，其中心思想就是懒，我">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://pfma8m0fx.bkt.clouddn.com/1538138150949.png">
-<meta property="og:updated_time" content="2018-09-30T04:20:48.972Z">
+<meta property="og:updated_time" content="2018-10-11T09:48:12.760Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Spring的IOC容器之基于XML的配置">
 <meta name="twitter:description" content="Spring系列不是教程，是学习笔记  官方文档是最好的教程，所以我参照着官方文档逐步学习。 IOC容器简介 IOC：控制反转，也称依赖注入(DI)。 IOC是一种思想，是将主动权调换的过程。  IOC例子：蛋炒饭   没有IOC 去购买原料：米、鸡蛋 然后做饭 吃饭   有了IOC(外卖) 打开外卖App，找到蛋炒饭 下单，等待饭到 吃饭     从上面的例子中，可以看出，其中心思想就是懒，我">
@@ -350,8 +350,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-09-30T12:20:48+08:00">
-                2018-09-30
+              <time title="更新于" itemprop="dateModified" datetime="2018-10-11T17:48:12+08:00">
+                2018-10-11
               </time>
             
           </span>
@@ -511,8 +511,7 @@
 <p>基于XML的配置元数据将这些bean配置为<code>&lt;bean/&gt;</code>顶级元素内的<code>&lt;beans/&gt;</code>元素。</p>
 <p>Java配置通常<code>@Bean</code>在<code>@Configuration</code>类中使用注释方法。</p>
 </blockquote>
-<h3 id="基于XML的配置"><a href="#基于XML的配置" class="headerlink" title="基于XML的配置"></a>基于XML的配置</h3><pre><code>#### 基于XML的配置元数据的基本结构：
-</code></pre><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span><br><span class="line"><span class="tag">&lt;<span class="name">beans</span> <span class="attr">xmlns</span>=<span class="string">"http://www.springframework.org/schema/beans"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">xmlns:xsi</span>=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">xsi:schemaLocation</span>=<span class="string">"http://www.springframework.org/schema/beans</span></span></span><br><span class="line"><span class="tag"><span class="string">        http://www.springframework.org/schema/beans/spring-beans.xsd"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"..."</span> <span class="attr">class</span>=<span class="string">"..."</span>&gt;</span>   </span><br><span class="line">        <span class="comment">&lt;!-- collaborators and configuration for this bean go here --&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"..."</span> <span class="attr">class</span>=<span class="string">"..."</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- collaborators and configuration for this bean go here --&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- more bean definitions go here --&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">beans</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="基于XML的配置"><a href="#基于XML的配置" class="headerlink" title="基于XML的配置"></a>基于XML的配置</h3><h4 id="基于XML的配置元数据的基本结构："><a href="#基于XML的配置元数据的基本结构：" class="headerlink" title="基于XML的配置元数据的基本结构："></a>基于XML的配置元数据的基本结构：</h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span><br><span class="line"><span class="tag">&lt;<span class="name">beans</span> <span class="attr">xmlns</span>=<span class="string">"http://www.springframework.org/schema/beans"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">xmlns:xsi</span>=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">xsi:schemaLocation</span>=<span class="string">"http://www.springframework.org/schema/beans</span></span></span><br><span class="line"><span class="tag"><span class="string">        http://www.springframework.org/schema/beans/spring-beans.xsd"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"..."</span> <span class="attr">class</span>=<span class="string">"..."</span>&gt;</span>   </span><br><span class="line">        <span class="comment">&lt;!-- collaborators and configuration for this bean go here --&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"..."</span> <span class="attr">class</span>=<span class="string">"..."</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- collaborators and configuration for this bean go here --&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- more bean definitions go here --&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">beans</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <ul>
 <li><code>id</code>属性是一个标识单个bean定义的字符串。</li>
 <li><code>class</code>属性定义bean的类型并使用完全限定的类名。</li>
@@ -688,8 +687,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/Blog/Oralce数据库/oracle数据库安装.html" rel="next" title="oracle数据库安装">
-                <i class="fa fa-chevron-left"></i> oracle数据库安装
+              <a href="/Blog/Spring/Spring-IOC解析/Spring的IOC容器之基于注解的配置.html" rel="next" title="Spring的ICO容器之基于注解的配置">
+                <i class="fa fa-chevron-left"></i> Spring的ICO容器之基于注解的配置
               </a>
             
           </div>
@@ -785,7 +784,7 @@
               
                 <a href="/Blog/archives/">
               
-                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-count">25</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -870,7 +869,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#IOC容器简介"><span class="nav-number">1.</span> <span class="nav-text">IOC容器简介</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Spring中的IOC容器"><span class="nav-number">1.1.</span> <span class="nav-text">Spring中的IOC容器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IOC配置"><span class="nav-number">1.2.</span> <span class="nav-text">IOC配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基于XML的配置"><span class="nav-number">1.2.1.</span> <span class="nav-text">基于XML的配置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#实例化容器"><span class="nav-number">1.2.1.1.</span> <span class="nav-text">实例化容器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用容器创建Bean"><span class="nav-number">1.2.1.2.</span> <span class="nav-text">使用容器创建Bean</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#例子-基于setter的依赖注入"><span class="nav-number">1.2.1.3.</span> <span class="nav-text">例子(基于setter的依赖注入)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#例子-基于构造函数的依赖注入"><span class="nav-number">1.2.1.4.</span> <span class="nav-text">例子(基于构造函数的依赖注入)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#知识点总结"><span class="nav-number">1.2.1.5.</span> <span class="nav-text">知识点总结</span></a></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#IOC容器简介"><span class="nav-number">1.</span> <span class="nav-text">IOC容器简介</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Spring中的IOC容器"><span class="nav-number">1.1.</span> <span class="nav-text">Spring中的IOC容器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IOC配置"><span class="nav-number">1.2.</span> <span class="nav-text">IOC配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基于XML的配置"><span class="nav-number">1.2.1.</span> <span class="nav-text">基于XML的配置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#基于XML的配置元数据的基本结构："><span class="nav-number">1.2.1.1.</span> <span class="nav-text">基于XML的配置元数据的基本结构：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实例化容器"><span class="nav-number">1.2.1.2.</span> <span class="nav-text">实例化容器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用容器创建Bean"><span class="nav-number">1.2.1.3.</span> <span class="nav-text">使用容器创建Bean</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#例子-基于setter的依赖注入"><span class="nav-number">1.2.1.4.</span> <span class="nav-text">例子(基于setter的依赖注入)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#例子-基于构造函数的依赖注入"><span class="nav-number">1.2.1.5.</span> <span class="nav-text">例子(基于构造函数的依赖注入)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#知识点总结"><span class="nav-number">1.2.1.6.</span> <span class="nav-text">知识点总结</span></a></li></ol></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -911,7 +910,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">32.5k</span>
+    <span title="Site words total count">33.3k</span>
   
 </div>
 
