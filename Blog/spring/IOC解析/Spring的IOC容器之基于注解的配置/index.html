@@ -74,7 +74,7 @@
 
 
 
-  <meta name="keywords" content="XGamer, Bangsong" />
+  <meta name="keywords" content="Spring,IOC解析," />
 
 
 
@@ -85,17 +85,21 @@
 
 
 
-<meta name="description" content="个人博客">
+<meta name="description" content="基于注解的配置​    在学习基于注解的配置前，先了解一下每个注解的作用。   @Component：基本注解，用于标识spring管理的组件，即：标识的类将作为组件加入到spring的IOC容器中。 @Repository：标识数据访问对象或DAO @Service：标识服务层 @Controller： 标识表现层 @Autowired：自动装配Bean   ​    上述的注解标识位置只是建议">
+<meta name="keywords" content="Spring,IOC解析">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Spring的IOC容器之基于注解的配置">
-<meta property="og:url" content="https://chinaxnet.cn/uncategorized/Spring的IOC容器之基于注解的配置/index.html">
+<meta property="og:url" content="https://chinaxnet.cn/Spring/IOC解析/Spring的IOC容器之基于注解的配置/index.html">
 <meta property="og:site_name" content="XGamer">
-<meta property="og:description" content="个人博客">
+<meta property="og:description" content="基于注解的配置​    在学习基于注解的配置前，先了解一下每个注解的作用。   @Component：基本注解，用于标识spring管理的组件，即：标识的类将作为组件加入到spring的IOC容器中。 @Repository：标识数据访问对象或DAO @Service：标识服务层 @Controller： 标识表现层 @Autowired：自动装配Bean   ​    上述的注解标识位置只是建议">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-12T06:39:16.142Z">
+<meta property="og:image" content="http://pfma8m0fx.bkt.clouddn.com/1539252239826.png">
+<meta property="og:image" content="http://pfma8m0fx.bkt.clouddn.com/1539317884658.png">
+<meta property="og:updated_time" content="2018-10-12T06:43:00.508Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Spring的IOC容器之基于注解的配置">
-<meta name="twitter:description" content="个人博客">
+<meta name="twitter:description" content="基于注解的配置​    在学习基于注解的配置前，先了解一下每个注解的作用。   @Component：基本注解，用于标识spring管理的组件，即：标识的类将作为组件加入到spring的IOC容器中。 @Repository：标识数据访问对象或DAO @Service：标识服务层 @Controller： 标识表现层 @Autowired：自动装配Bean   ​    上述的注解标识位置只是建议">
+<meta name="twitter:image" content="http://pfma8m0fx.bkt.clouddn.com/1539252239826.png">
 
 
 
@@ -125,7 +129,7 @@
 
 
 
-  <link rel="canonical" href="https://chinaxnet.cn/uncategorized/Spring的IOC容器之基于注解的配置/"/>
+  <link rel="canonical" href="https://chinaxnet.cn/Spring/IOC解析/Spring的IOC容器之基于注解的配置/"/>
 
 
 
@@ -302,7 +306,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://chinaxnet.cn/Blog/uncategorized/Spring的IOC容器之基于注解的配置/">
+    <link itemprop="mainEntityOfPage" href="https://chinaxnet.cn/Blog/Spring/IOC解析/Spring的IOC容器之基于注解的配置/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="万能的小明">
@@ -347,12 +351,45 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-10-12T14:39:16+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2018-10-12T14:43:00+08:00">
                 2018-10-12
               </time>
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Blog/categories/Spring/" itemprop="url" rel="index">
+                    <span itemprop="name">Spring</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Blog/categories/Spring/IOC解析/" itemprop="url" rel="index">
+                    <span itemprop="name">IOC解析</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -380,7 +417,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  0
+                  791
                 </span>
               
 
@@ -396,7 +433,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  4
                 </span>
               
             </div>
@@ -417,7 +454,39 @@
       
 
       
-        
+        <h3 id="基于注解的配置"><a href="#基于注解的配置" class="headerlink" title="基于注解的配置"></a>基于注解的配置</h3><p>​    在学习基于注解的配置前，先了解一下每个注解的作用。</p>
+<blockquote>
+<ul>
+<li><code>@Component</code>：基本注解，用于标识spring管理的组件，即：标识的类将作为组件加入到spring的IOC容器中。</li>
+<li><code>@Repository</code>：标识数据访问对象或DAO</li>
+<li><code>@Service</code>：标识服务层</li>
+<li><code>@Controller</code>： 标识表现层</li>
+<li><code>@Autowired</code>：自动装配Bean</li>
+</ul>
+</blockquote>
+<p>​    上述的注解标识位置只是建议，不是强制的，其所有功能都是将标识类作为组件加入到spring的IOC容器中。要使用基于注解的配置，首先需要在配置文件中加上<code>组件扫描</code>的代码</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">context:component-scan</span> <span class="attr">base-package</span>=<span class="string">"test"</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h3><h4 id="第一步：创建maven项目"><a href="#第一步：创建maven项目" class="headerlink" title="第一步：创建maven项目"></a>第一步：创建maven项目</h4><p>​    使用idea，选择<code>新建项目</code>，选择<code>maven</code>，不选模板，<code>next</code>，设置<code>Groupid</code>和<code>Artifactid</code>，<code>next</code>，设置项目位置，<code>next</code>。</p>
+<h4 id="第二步：修改pom-xml，导入依赖"><a href="#第二步：修改pom-xml，导入依赖" class="headerlink" title="第二步：修改pom.xml，导入依赖"></a>第二步：修改<code>pom.xml</code>，导入依赖</h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span><br><span class="line"><span class="tag">&lt;<span class="name">project</span> <span class="attr">xmlns</span>=<span class="string">"http://maven.apache.org/POM/4.0.0"</span></span></span><br><span class="line"><span class="tag">         <span class="attr">xmlns:xsi</span>=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></span></span><br><span class="line"><span class="tag">         <span class="attr">xsi:schemaLocation</span>=<span class="string">"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">modelVersion</span>&gt;</span>4.0.0<span class="tag">&lt;/<span class="name">modelVersion</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>test<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>test1<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.0-SNAPSHOT<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-core<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>5.0.8.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-beans<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>5.0.8.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-context<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>5.0.8.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-aop<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>5.0.8.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">project</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="第三步：创建com-test包并创建test-xml配置文件"><a href="#第三步：创建com-test包并创建test-xml配置文件" class="headerlink" title="第三步：创建com.test包并创建test.xml配置文件"></a>第三步：创建<code>com.test</code>包并创建<code>test.xml</code>配置文件</h4><p>创建好之后的目录结构</p>
+<p><img src="http://pfma8m0fx.bkt.clouddn.com/1539252239826.png" alt="1539252239826"></p>
+<p>在<code>test.xml</code>文件中开启<code>组件扫描</code></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span><br><span class="line"><span class="tag">&lt;<span class="name">beans</span> <span class="attr">xmlns</span>=<span class="string">"http://www.springframework.org/schema/beans"</span></span></span><br><span class="line"><span class="tag">       <span class="attr">xmlns:xsi</span>=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></span></span><br><span class="line"><span class="tag">       <span class="attr">xmlns:context</span>=<span class="string">"http://www.springframework.org/schema/context"</span></span></span><br><span class="line"><span class="tag">       <span class="attr">xsi:schemaLocation</span>=<span class="string">"http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">context:component-scan</span> <span class="attr">base-package</span>=<span class="string">"com.test"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">beans</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="第四步：创建类"><a href="#第四步：创建类" class="headerlink" title="第四步：创建类"></a>第四步：创建类</h4><p>分别创建：<code>TestObj</code>、<code>TestController</code>、<code>TestService</code>、<code>TestRepositroy</code>、<code>TestReporitoryImpl</code></p>
+<h5 id="TestObj"><a href="#TestObj" class="headerlink" title="TestObj"></a><code>TestObj</code></h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.test;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Component;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestObj</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"TestObj......."</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="TestController"><a href="#TestController" class="headerlink" title="TestController"></a><code>TestController</code></h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.test;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Controller;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Controller</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestController</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> TestRepositroy testRepositroy;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"TestController......."</span>);</span><br><span class="line">        testRepositroy.test();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>TestService</code></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.test;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Service;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Service</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestService</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"TestService......."</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>TestRepositroy</code></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.test;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">TestRepositroy</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>TestReporitoryImpl</code></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.test;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Repository;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Repository</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestReporitoryImpl</span> <span class="keyword">implements</span> <span class="title">TestRepositroy</span></span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"TestReporitoryImpl......."</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="第五步：创建测试类Test"><a href="#第五步：创建测试类Test" class="headerlink" title="第五步：创建测试类Test"></a>第五步：创建测试类<code>Test</code></h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> com.test.TestController;</span><br><span class="line"><span class="keyword">import</span> com.test.TestObj;</span><br><span class="line"><span class="keyword">import</span> com.test.TestService;</span><br><span class="line"><span class="keyword">import</span> org.springframework.context.ApplicationContext;</span><br><span class="line"><span class="keyword">import</span> org.springframework.context.support.ClassPathXmlApplicationContext;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        ApplicationContext ctx = <span class="keyword">new</span> ClassPathXmlApplicationContext(<span class="string">"test.xml"</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//TestObj</span></span><br><span class="line">        TestObj testObj = ctx.getBean(TestObj.class);</span><br><span class="line">        testObj.test();</span><br><span class="line"></span><br><span class="line">        <span class="comment">//TestController</span></span><br><span class="line">        TestController testController = ctx.getBean(TestController.class);</span><br><span class="line">        testController.test();</span><br><span class="line"></span><br><span class="line">        <span class="comment">//TestService</span></span><br><span class="line">        TestService testService = ctx.getBean(TestService.class);</span><br><span class="line">        testService.test();</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>测试结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">TestObj.......</span><br><span class="line">TestController.......</span><br><span class="line">TestReporitoryImpl.......</span><br><span class="line">TestService.......</span><br></pre></td></tr></table></figure>
+<p>最后附上最终的文件目录结构</p>
+<p><img src="http://pfma8m0fx.bkt.clouddn.com/1539317884658.png" alt="1539317884658"></p>
+
       
     </div>
 	<div>
@@ -475,7 +544,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://chinaxnet.cn/uncategorized/Spring的IOC容器之基于注解的配置/" title="Spring的IOC容器之基于注解的配置">https://chinaxnet.cn/uncategorized/Spring的IOC容器之基于注解的配置/</a>
+    <a href="https://chinaxnet.cn/Spring/IOC解析/Spring的IOC容器之基于注解的配置/" title="Spring的IOC容器之基于注解的配置">https://chinaxnet.cn/Spring/IOC解析/Spring的IOC容器之基于注解的配置/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -488,6 +557,14 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/Blog/tags/Spring/" rel="tag"><i class="fa fa-tag"></i> Spring</a>
+          
+            <a href="/Blog/tags/IOC解析/" rel="tag"><i class="fa fa-tag"></i> IOC解析</a>
+          
+        </div>
+      
 
       
       
@@ -497,7 +574,7 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/Blog/uncategorized/Spring的IOC容器之基于XML的配置/" rel="next" title="Spring的IOC容器之基于XML的配置">
+              <a href="/Blog/Spring/IOC解析/Spring的IOC容器之基于XML的配置/" rel="next" title="Spring的IOC容器之基于XML的配置">
                 <i class="fa fa-chevron-left"></i> Spring的IOC容器之基于XML的配置
               </a>
             
@@ -561,8 +638,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -592,7 +678,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/Blog/categories/index.html">
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -603,7 +689,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/Blog/tags/index.html">
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -657,6 +743,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#基于注解的配置"><span class="nav-number">1.</span> <span class="nav-text">基于注解的配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#例子"><span class="nav-number">2.</span> <span class="nav-text">例子</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#第一步：创建maven项目"><span class="nav-number">2.1.</span> <span class="nav-text">第一步：创建maven项目</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第二步：修改pom-xml，导入依赖"><span class="nav-number">2.2.</span> <span class="nav-text">第二步：修改pom.xml，导入依赖</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第三步：创建com-test包并创建test-xml配置文件"><span class="nav-number">2.3.</span> <span class="nav-text">第三步：创建com.test包并创建test.xml配置文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第四步：创建类"><span class="nav-number">2.4.</span> <span class="nav-text">第四步：创建类</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#TestObj"><span class="nav-number">2.4.1.</span> <span class="nav-text">TestObj</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#TestController"><span class="nav-number">2.4.2.</span> <span class="nav-text">TestController</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第五步：创建测试类Test"><span class="nav-number">2.5.</span> <span class="nav-text">第五步：创建测试类Test</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
         <div class="back-to-top">
@@ -691,7 +793,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">30.5k</span>
+    <span title="Site words total count">33.3k</span>
   
 </div>
 
