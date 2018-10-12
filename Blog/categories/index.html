@@ -44,6 +44,7 @@
 
 
 
+
   
   
   <link href="/Blog/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
@@ -88,7 +89,7 @@
 <meta name="description" content="个人博客">
 <meta property="og:type" content="website">
 <meta property="og:title" content="文章分类">
-<meta property="og:url" content="https://chinaxnet.cn/categories/index.html">
+<meta property="og:url" content="https://bangsong.github.io/Blog/categories/index.html">
 <meta property="og:site_name" content="XGamer">
 <meta property="og:description" content="个人博客">
 <meta property="og:locale" content="zh-Hans">
@@ -125,7 +126,7 @@
 
 
 
-  <link rel="canonical" href="https://chinaxnet.cn/categories/"/>
+  <link rel="canonical" href="https://bangsong.github.io/Blog/categories/"/>
 
 
 
@@ -312,7 +313,7 @@
                 目前共计 9 个分类
             </div>
             <div class="category-all">
-              <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/Blog/categories/IDEA/">IDEA</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/Blog/categories/Lisp/">Lisp</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/Blog/categories/Oralce数据库/">Oralce数据库</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/Blog/categories/SSM/">SSM</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/Blog/categories/Spring/">Spring</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/Blog/categories/Spring/Spring-IOC解析/">Spring IOC解析</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/Blog/categories/sprintBoot/">sprintBoot</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/Blog/categories/哟，文艺哦！/">哟，文艺哦！</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/Blog/categories/搭建博客/">搭建博客</a><span class="category-list-count">4</span></li></ul>
+              <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/Blog/categories/IDEA/">IDEA</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/Blog/categories/Lisp/">Lisp</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/Blog/categories/Oralce数据库/">Oralce数据库</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/Blog/categories/Spring/">Spring</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/Blog/categories/Spring/Spring-IOC解析/">Spring IOC解析</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/Blog/categories/spring/">spring</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/Blog/categories/sprintBoot/">sprintBoot</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/Blog/categories/哟，文艺哦！/">哟，文艺哦！</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/Blog/categories/搭建博客/">搭建博客</a><span class="category-list-count">4</span></li></ul>
             </div>
           </div>
         
@@ -655,6 +656,27 @@
 
 
 
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: true,
+        appId: 'PUVRI86wLIGAti4nNU0xvbAz-gzGzoHsz',
+        appKey: 'gaCjN2Q5yFuttWWvoUkt8Yev',
+        placeholder: '疑问或建议，请留言.若需要帮助，请附上联系方式.',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
 
 
 
@@ -986,21 +1008,6 @@
   
 
   
-<script>
-(function(){
-    var bp = document.createElement('script');
-    var curProtocol = window.location.protocol.split(':')[0];
-    if (curProtocol === 'https') {
-        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
-    }
-    else {
-        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-    }
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(bp, s);
-})();
-</script>
-
 
   
   
